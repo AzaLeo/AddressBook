@@ -240,7 +240,6 @@
     <Content Include="App_Themes\AddressBook\js\jquery.easing-sooper.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.sooperfish.js" />
-    <Content Include="App_Themes\AddressBook\js\modernizr-1.5.min.js" />
     <Content Include="App_Themes\AddressBook\Style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

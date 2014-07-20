@@ -532,3 +532,7 @@ ul#nav {
         ul#nav li a:hover, ul#nav li a:focus {
             color: #09D4FF;
         }
+
+section#login {
+    margin: 20px 10px 0 0;
+}

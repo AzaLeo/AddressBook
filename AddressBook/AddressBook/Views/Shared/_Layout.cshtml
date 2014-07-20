@@ -8,12 +8,18 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/App_Themes/AddressBook/css")
     @Scripts.Render("~/App_Themes/AddressBook/js")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div id="main">
         <header>
             <div id="logo">
                 <div id="logo_text">
+                    <div style="float:right;">
+                        <section id="login">
+                            @Html.Partial("_LoginPartial")
+                        </section>
+                    </div>
                     <!-- class="logo_colour", allows you to change the colour of the text -->
                     <h1><a href="index.html"><span class="logo_colour">AddressBook</span></a></h1>
                     <h2>Тестовое задание</h2>
@@ -40,10 +46,6 @@
                 @RenderBody()
             </div>
         </div>
-        <div id="scroll">
-            <a title="Scroll to the top" class="top" href="#">
-                <img src="/App_Themes/AddressBook/images/top.png" alt="top" /></a>
-        </div>
         <footer>
             <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
             <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
@@ -53,9 +55,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('ul.sf-menu').sooperfish();
-            $('.top').click(function () { $('html, body').animate({ scrollTop: 0 }, 'fast'); return false; });
         });
     </script>
 
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
