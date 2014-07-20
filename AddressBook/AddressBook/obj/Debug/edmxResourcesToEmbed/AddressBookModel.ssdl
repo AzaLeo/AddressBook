@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище AddressBookModel" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Хранилище AddressBookModelContainer">
+    <EntitySet Name="Addresses" EntityType="Хранилище AddressBookModel.Addresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacts" EntityType="Хранилище AddressBookModel.Contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Types" EntityType="Хранилище AddressBookModel.Types" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserProfile" EntityType="Хранилище AddressBookModel.UserProfile" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Contacts_Addresses" Association="Хранилище AddressBookModel.FK_Contacts_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacts_Types" Association="Хранилище AddressBookModel.FK_Contacts_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacts_UserProfile" Association="Хранилище AddressBookModel.FK_Contacts_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="House" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Room" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ContactsId" />
+    </Key>
+    <Property Name="ContactsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Types">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Contacts_Addresses">
+    <End Role="Addresses" Type="Хранилище AddressBookModel.Addresses" Multiplicity="1" />
+    <End Role="Contacts" Type="Хранилище AddressBookModel.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacts_Types">
+    <End Role="Types" Type="Хранилище AddressBookModel.Types" Multiplicity="1" />
+    <End Role="Contacts" Type="Хранилище AddressBookModel.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacts_UserProfile">
+    <End Role="UserProfile" Type="Хранилище AddressBookModel.UserProfile" Multiplicity="1" />
+    <End Role="Contacts" Type="Хранилище AddressBookModel.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
