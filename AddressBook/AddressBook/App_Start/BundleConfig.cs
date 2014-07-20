@@ -38,6 +38,14 @@ namespace AddressBook
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/App_Themes/AddressBook/css").Include("~/App_Themes/AddressBook/Style.css"));
+
+            bundles.Add(new ScriptBundle("~/App_Themes/AddressBook/js").Include(
+                        "~/App_Themes/AddressBook/js/jquery.js",
+                        "~/App_Themes/AddressBook/js/jquery.easing-sooper.js",
+                        "~/App_Themes/AddressBook/js/jquery.sooperfish.js",
+                        "~/App_Themes/AddressBook/js/modernizr-1.5.min.js"));
         }
     }
 }

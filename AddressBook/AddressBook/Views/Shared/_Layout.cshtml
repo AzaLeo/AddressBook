@@ -1,49 +1,61 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
-    <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title — приложение ASP.NET MVC</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>AddressBook (Тестовое задание) &bull; @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/App_Themes/AddressBook/css")
+    @Scripts.Render("~/App_Themes/AddressBook/js")
+</head>
+<body>
+    <div id="main">
         <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("ваша эмблема здесь", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                            <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                            <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
+            <div id="logo">
+                <div id="logo_text">
+                    <!-- class="logo_colour", allows you to change the colour of the text -->
+                    <h1><a href="index.html"><span class="logo_colour">AddressBook</span></a></h1>
+                    <h2>Тестовое задание</h2>
                 </div>
             </div>
+            <nav>
+                <div id="menu_container">
+                    <ul class="sf-menu" id="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                        <li><a href="page.html">A Page</a></li>
+                        <li><a href="another_page.html">Another Page</a></li>
+                        <li><a href="#">Example Drop Down</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+        <div id="site_content">
+            <div id="sidebar_container">
+                @RenderSection("SideBar", false)
+            </div>
+            <div class="content">
                 @RenderBody()
-            </section>
+            </div>
+        </div>
+        <div id="scroll">
+            <a title="Scroll to the top" class="top" href="#">
+                <img src="/App_Themes/AddressBook/images/top.png" alt="top" /></a>
         </div>
         <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year — приложение ASP.NET MVC</p>
-                </div>
-            </div>
+            <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+            <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
         </footer>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul.sf-menu').sooperfish();
+            $('.top').click(function () { $('html, body').animate({ scrollTop: 0 }, 'fast'); return false; });
+        });
+    </script>
+
+</body>
 </html>
