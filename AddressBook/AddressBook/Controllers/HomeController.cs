@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AddressBook.Models;
 
 namespace AddressBook.Controllers
 {
     public class HomeController : Controller
     {
+        private DBManage _db;
+
+        public HomeController()
+        {
+            _db = new DBManage();
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            return View(_db.GetAllContacts());
+        }
 
-            return View();
+        public ActionResult Details(int id)
+        {
+            ViewBag.Address = _db.GetAddress(id);
+            return PartialView(_db.GetContact(id));
         }
 
         public ActionResult About()
