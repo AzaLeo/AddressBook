@@ -17,15 +17,18 @@
 
     @foreach (var item in Model)
     {
+        string fullName = String.Empty;
+        fullName = item.LastName + " " + item.FirstName;
+        
         <tr>
             <td>
-                @Html.ActionLink(item.LastName + " " + item.FirstName + " " + item.MiddleName, "Details", new { id = item.ContactsId }, new { @class = "Details" })
+                @Html.ActionLink(fullName, "Details", new { id = item.ContactsId }, new { @class = "Details", @title = "Детали контакта " + fullName })
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ContactsId })
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ContactsId })
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.ContactsId })
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ContactsId })
             </td>
         </tr>
     }

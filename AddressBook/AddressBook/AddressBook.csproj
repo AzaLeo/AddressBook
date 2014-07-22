@@ -227,6 +227,10 @@
     <Content Include="App_Themes\AddressBook\images\arrows-white.png" />
     <Content Include="App_Themes\AddressBook\images\browser.png" />
     <Content Include="App_Themes\AddressBook\images\bullet.png" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\border.png" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\controls.png" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\loading.gif" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\loading_background.png" />
     <Content Include="App_Themes\AddressBook\images\contact.png" />
     <Content Include="App_Themes\AddressBook\images\examples.png" />
     <Content Include="App_Themes\AddressBook\images\footer.png" />
@@ -382,6 +386,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
