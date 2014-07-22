@@ -29,5 +29,11 @@ namespace AddressBook.Models
             var addressId = GetContact(id).Select(i => i.AddressId);
             return _db.Addresses.Where(i => i.AddressId == addressId.FirstOrDefault());
         }
+
+        public IQueryable<Types> GetType(int id)
+        {
+            var typeId = GetContact(id).Select(i => i.TypeId);
+            return _db.Types.Where(i => i.TypeId == typeId.FirstOrDefault());
+        }
     }
 }

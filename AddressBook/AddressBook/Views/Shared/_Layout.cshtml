@@ -6,16 +6,22 @@
     <title>AddressBook (Тестовое задание) &bull; @ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/App_Themes/AddressBook/css")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/App_Themes/AddressBook/js")
     @Scripts.Render("~/bundles/modernizr")
+    <script>
+        $(document).ready(function () {
+            $("a.Details").colorbox();
+        });
+    </script>
+    @Styles.Render("~/App_Themes/AddressBook/css")
 </head>
 <body>
     <div id="main">
         <header>
             <div id="logo">
                 <div id="logo_text">
-                    <div style="float:right;">
+                    <div style="float: right;">
                         <section id="login">
                             @Html.Partial("_LoginPartial")
                         </section>
@@ -58,7 +64,6 @@
         });
     </script>
 
-    @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
 </html>

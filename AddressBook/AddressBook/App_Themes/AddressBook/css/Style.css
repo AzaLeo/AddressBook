@@ -1,8 +1,8 @@
-﻿@font-face {
+﻿/*@font-face {
     font-family: Yanone Kaffeesatz;
-    src: url('../AddressBook/fonts/YanoneKaffeesatz-Regular.eot');
-    src: local("Yanone Kaffeesatz"), url('../AddressBook/fonts/YanoneKaffeesatz-Regular.ttf');
-}
+    src: url('../fonts/YanoneKaffeesatz-Regular.eot');
+    src: local("Yanone Kaffeesatz"), url('../fonts/YanoneKaffeesatz-Regular.ttf');
+}*/
 
 html {
     height: 100%;
@@ -20,7 +20,7 @@ article, aside, figure, footer, header, hgroup, nav, section {
 
 body {
     font: normal .80em arial, sans-serif;
-    background: #F8F7EE url(../AddressBook/images/pattern.png);
+    background: #F8F7EE url(../images/pattern.png);
     color: #7A7A68;
 }
 
@@ -138,7 +138,7 @@ header {
 #logo {
     width: 1000px;
     height: 200px;
-    background: transparent url(../AddressBook/images/logo.png) no-repeat right;
+    background: transparent url(../images/logo.png) no-repeat right;
     color: #888;
     padding: 0;
 }
@@ -149,7 +149,7 @@ header {
     }
 
     #logo h1, #logo h2 {
-        font: normal 420% 'Yanone Kaffeesatz', arial, sans-serif;
+        font: normal 300% 'Yanone Kaffeesatz', arial, sans-serif;
         border-bottom: 0;
         text-transform: none;
         margin: 0;
@@ -176,10 +176,10 @@ header {
 }
 
 nav {
-    height: 44px;
+    height: 33px;
     width: 100%;
-    margin: -44px auto 0 auto;
-    background: transparent url(../AddressBook/images/menubar.png) repeat;
+    margin: -33px auto 0 auto;
+    background: transparent url(../images/menubar.png) repeat;
 }
 
 #menu_container {
@@ -270,7 +270,7 @@ nav {
 
         .content ul li, .sidebar ul li {
             list-style-type: none;
-            background: url(../AddressBook/images/bullet.png) no-repeat;
+            background: url(../images/bullet.png) no-repeat;
             margin: 0 0 0 0;
             padding: 0 0 4px 28px;
             line-height: 1.5em;
@@ -283,7 +283,7 @@ footer {
     height: 60px;
     padding: 20px 0 5px 0;
     text-align: center;
-    background: #404040 url(../AddressBook/images/footer.png) repeat-x;
+    background: #404040 url(../images/footer.png) repeat-x;
     color: #A8AA94;
     margin: 0 0 0 0;
 }
@@ -494,7 +494,7 @@ span.sf-arrow {
     top: 20px;
     right: 5px;
     display: block;
-    background: url(../AddressBook/images/arrows-white.png) no-repeat 0 0;
+    background: url(../images/arrows-white.png) no-repeat 0 0;
     overflow: hidden; /* making sure IE6 doesn't overflow and expand the box */
     font-size: 1px;
 }
@@ -511,14 +511,14 @@ ul#nav {
 }
 
     ul#nav ul {
-        background: url(../AddressBook/images/menu_hover.png) repeat;
+        background: url(../images/menu_hover.png) repeat;
         margin-top: 5px;
         padding-bottom: 15px;
     }
 
     ul#nav li a {
         padding: 7px 20px 6px 20px;
-        font: 170% 'Yanone Kaffeesatz',helvetica,arial,verdana,sans;
+        font: 135% 'Yanone Kaffeesatz',helvetica,arial,verdana,sans;
         text-shadow: 1px 1px #000;
         text-decoration: none;
         color: #FFF;
@@ -533,7 +533,7 @@ section#login {
     margin: 20px 10px 0 0;
 }
 
-a.Detail {
+a.Details {
     text-decoration: none;
     border-bottom: 1px dashed #06A6CE;
 }

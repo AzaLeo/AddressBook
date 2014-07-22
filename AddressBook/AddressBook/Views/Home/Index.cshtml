@@ -11,8 +11,7 @@
 </p>
 <table>
     <tr>
-        <th>
-            ФИО
+        <th>ФИО
         </th>
     </tr>
 
@@ -20,13 +19,10 @@
     {
         <tr>
             <td>
-                <a href="~/Views/Home/Index" class="Detail">@Html.DisplayFor(modelItem => item.LastName) @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.MiddleName)</a>
+                @Html.ActionLink(item.LastName + " " + item.FirstName + " " + item.MiddleName, "Details", new { id = item.ContactsId }, new { @class = "Details" })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ContactsId })
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.ContactsId })
             </td>
             <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.ContactsId })

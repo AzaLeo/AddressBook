@@ -1,5 +1,9 @@
 ﻿@model IQueryable<AddressBook.Models.Contacts>
 
+@{
+    //ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
 
 <table>
     @foreach (var item in Model)
@@ -79,6 +83,17 @@
                 @Html.DisplayFor(modelItem => addressItem.Room)
             </td>
         </tr>      
+        }
+        foreach (AddressBook.Models.Types typeItem in ViewBag.Type)
+        {   
+        <tr>
+            <td>
+                @Html.DisplayNameFor(modelItem => typeItem.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => typeItem.Name)
+            </td>
+        </tr>   
         }
         <tr>
             <td>

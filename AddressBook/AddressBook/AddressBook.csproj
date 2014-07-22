@@ -222,6 +222,7 @@
     <Content Include="App_Data\AddressBook_log.ldf">
       <DependentUpon>AddressBook.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Themes\AddressBook\css\colorbox.css" />
     <Content Include="App_Themes\AddressBook\images\another_page.png" />
     <Content Include="App_Themes\AddressBook\images\arrows-white.png" />
     <Content Include="App_Themes\AddressBook\images\browser.png" />
@@ -238,10 +239,11 @@
     <Content Include="App_Themes\AddressBook\images\paperclip.png" />
     <Content Include="App_Themes\AddressBook\images\pattern.png" />
     <Content Include="App_Themes\AddressBook\images\top.png" />
+    <Content Include="App_Themes\AddressBook\js\jquery.colorbox.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.easing-sooper.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.sooperfish.js" />
-    <Content Include="App_Themes\AddressBook\Style.css" />
+    <Content Include="App_Themes\AddressBook\css\Style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -371,6 +373,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutDetails.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>

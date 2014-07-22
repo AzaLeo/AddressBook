@@ -23,8 +23,12 @@ namespace AddressBook.Controllers
 
         public ActionResult Details(int id)
         {
+            IQueryable<Contacts> contact = _db.GetContact(id);
+            ViewBag.TitleLastName = contact.Select(ln => ln.LastName).Single();
+            ViewBag.TitleFirstName += contact.Select(fn => fn.FirstName).Single();
             ViewBag.Address = _db.GetAddress(id);
-            return PartialView(_db.GetContact(id));
+            ViewBag.Type = _db.GetType(id);
+            return View(contact);
         }
 
         public ActionResult About()
