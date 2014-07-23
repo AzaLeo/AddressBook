@@ -19,21 +19,27 @@ namespace AddressBook.Models
             return _db.Contacts;
         }
 
-        public IQueryable<Contacts> GetContact(int id)
+        public Contacts GetContact(int id)
         {
-            return _db.Contacts.Where(i => i.ContactsId == id);
+            return _db.Contacts.SingleOrDefault(i => i.ContactsId == id);
         }
 
         public IQueryable<Addresses> GetAddress(int id)
         {
-            var addressId = GetContact(id).Select(i => i.AddressId);
-            return _db.Addresses.Where(i => i.AddressId == addressId.FirstOrDefault());
+            int addressId = GetContact(id).AddressId;
+            return _db.Addresses.Where(i => i.AddressId == addressId);
         }
 
         public IQueryable<Types> GetType(int id)
         {
-            var typeId = GetContact(id).Select(i => i.TypeId);
-            return _db.Types.Where(i => i.TypeId == typeId.FirstOrDefault());
+            int typeId = GetContact(id).TypeId;
+            return _db.Types.Where(i => i.TypeId == typeId);
+        }
+
+        public void AddContact(Contacts newContact)
+        {
+            _db.Contacts.Add(newContact);
+            _db.SaveChanges();
         }
     }
 }

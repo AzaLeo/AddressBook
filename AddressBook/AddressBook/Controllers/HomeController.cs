@@ -23,25 +23,20 @@ namespace AddressBook.Controllers
 
         public ActionResult Details(int id)
         {
-            IQueryable<Contacts> contact = _db.GetContact(id);
-            ViewBag.TitleLastName = contact.Select(ln => ln.LastName).Single();
-            ViewBag.TitleFirstName += contact.Select(fn => fn.FirstName).Single();
             ViewBag.Address = _db.GetAddress(id);
             ViewBag.Type = _db.GetType(id);
-            return View(contact);
+            return View(_db.GetContact(id));
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Create()
         {
-            ViewBag.Message = "Your app description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Create(Contacts newContact)
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
