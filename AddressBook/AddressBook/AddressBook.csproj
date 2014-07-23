@@ -227,10 +227,10 @@
     <Content Include="App_Themes\AddressBook\images\arrows-white.png" />
     <Content Include="App_Themes\AddressBook\images\browser.png" />
     <Content Include="App_Themes\AddressBook\images\bullet.png" />
-    <Content Include="App_Themes\AddressBook\images\colorbox\border.png" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\border1.png" />
+    <Content Include="App_Themes\AddressBook\images\colorbox\border2.png" />
     <Content Include="App_Themes\AddressBook\images\colorbox\controls.png" />
     <Content Include="App_Themes\AddressBook\images\colorbox\loading.gif" />
-    <Content Include="App_Themes\AddressBook\images\colorbox\loading_background.png" />
     <Content Include="App_Themes\AddressBook\images\contact.png" />
     <Content Include="App_Themes\AddressBook\images\examples.png" />
     <Content Include="App_Themes\AddressBook\images\footer.png" />
