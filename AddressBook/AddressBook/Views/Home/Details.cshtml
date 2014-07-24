@@ -18,33 +18,24 @@
         <th>
             @Html.DisplayNameFor(model => model.Phone)
         </th>
-
-        @foreach (AddressBook.Models.Addresses address in ViewBag.Address)
-        {   
-            <th>
-                @Html.DisplayNameFor(a => address.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(a => address.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(a => address.Street)
-            </th>
-            <th>
-                @Html.DisplayNameFor(a => address.House)
-            </th>
-            <th>
-                @Html.DisplayNameFor(a => address.Room)
-            </th>   
-        }
-
-        @foreach (AddressBook.Models.Types typeItem in ViewBag.Type)
-        {   
-            <th>
-                @Html.DisplayNameFor(t => typeItem.Name)
-            </th>
-        }
-
+        <th>
+            @Html.DisplayNameFor(model => model.Addresses.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Addresses.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Addresses.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Addresses.House)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Addresses.Room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Types.Name)
+        </th>
     </tr>
     <tr>
         <td>
@@ -59,32 +50,23 @@
         <td>
             @Html.DisplayFor(model => model.Phone)
         </td>
-
-        @foreach (AddressBook.Models.Addresses address in ViewBag.Address)
-        {   
-            <td>
-                @Html.DisplayFor(a => address.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(a => address.City)
-            </td>
-            <td>
-                @Html.DisplayFor(a => address.Street)
-            </td>
-            <td>
-                @Html.DisplayFor(a => address.House)
-            </td>
-            <td>
-                @Html.DisplayFor(a => address.Room)
-            </td>   
-        }
-
-        @foreach (AddressBook.Models.Types type in ViewBag.Type)
-        {   
-            <td>
-                @Html.DisplayFor(t => type.Name)
-            </td> 
-        }
-
+        <td>
+            @Html.DisplayFor(model => model.Addresses.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Addresses.City)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Addresses.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Addresses.House)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Addresses.Room)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Types.Name)
+        </td>
     </tr>
 </table>

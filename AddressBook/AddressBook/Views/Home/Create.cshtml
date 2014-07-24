@@ -1,17 +1,17 @@
 ﻿@model AddressBook.Models.Contacts
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Создать контакт";
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Contacts</legend>
+        <legend>Контакт</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.FirstName)
@@ -44,15 +44,7 @@
             @Html.EditorFor(model => model.Phone)
             @Html.ValidationMessageFor(model => model.Phone)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AddressId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AddressId)
-            @Html.ValidationMessageFor(model => model.AddressId)
-        </div>
-
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Email)
         </div>
@@ -62,30 +54,58 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TypeId)
+            @Html.LabelFor(model => model.Addresses.Country)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TypeId)
-            @Html.ValidationMessageFor(model => model.TypeId)
+            @Html.EditorFor(model => model.Addresses.Country)
+            @Html.ValidationMessageFor(model => model.Addresses.Country)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserId)
+            @Html.LabelFor(model => model.Addresses.City)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.UserId)
-            @Html.ValidationMessageFor(model => model.UserId)
+            @Html.EditorFor(model => model.Addresses.City)
+            @Html.ValidationMessageFor(model => model.Addresses.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.Street)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.Street)
+            @Html.ValidationMessageFor(model => model.Addresses.Street)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.House)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.House)
+            @Html.ValidationMessageFor(model => model.Addresses.House)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.Room)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.Room)
+            @Html.ValidationMessageFor(model => model.Addresses.Room)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Types.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Types.Name, (IEnumerable<SelectListItem>)ViewBag.TypeList)
+            @Html.ValidationMessageFor(model => model.Types.Name)
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Создать" />
         </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

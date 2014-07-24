@@ -533,3 +533,17 @@ a.Details {
     text-decoration: none;
     border-bottom: 1px dashed #06A6CE;
 }
+
+.content fieldset {
+    padding: 10px;
+}
+
+input[type=submit] {
+    border: 0;
+    margin: 10px 0;
+    cursor: pointer;
+    background: #3B3B3B;
+    border-radius: 4px;
+    color: #FAFAFA;
+    padding: 3px 10px;
+}

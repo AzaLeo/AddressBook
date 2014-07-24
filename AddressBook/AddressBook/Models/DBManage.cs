@@ -24,16 +24,9 @@ namespace AddressBook.Models
             return _db.Contacts.SingleOrDefault(i => i.ContactsId == id);
         }
 
-        public IQueryable<Addresses> GetAddress(int id)
+        public IEnumerable<Types> GetTypeList()
         {
-            int addressId = GetContact(id).AddressId;
-            return _db.Addresses.Where(i => i.AddressId == addressId);
-        }
-
-        public IQueryable<Types> GetType(int id)
-        {
-            int typeId = GetContact(id).TypeId;
-            return _db.Types.Where(i => i.TypeId == typeId);
+            return _db.Types;
         }
 
         public void AddContact(Contacts newContact)

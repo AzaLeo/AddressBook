@@ -23,20 +23,26 @@ namespace AddressBook.Controllers
 
         public ActionResult Details(int id)
         {
-            ViewBag.Address = _db.GetAddress(id);
-            ViewBag.Type = _db.GetType(id);
             return View(_db.GetContact(id));
         }
 
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.TypeList = from c in _db.GetTypeList()
+                               select new SelectListItem
+                               {
+                                   Value = c.Name,
+                                   Text = c.Name
+                               };
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(Contacts newContact)
+        public ActionResult Create(Contacts newContact, IEnumerable<SelectListItem> test)
         {
+            Contacts s = newContact;
+            IEnumerable<SelectListItem> asdf = test;
             return View();
         }
     }
