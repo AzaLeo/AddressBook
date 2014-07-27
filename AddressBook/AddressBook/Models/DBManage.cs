@@ -29,10 +29,21 @@ namespace AddressBook.Models
             return _db.Types;
         }
 
-        public void AddContact(Contacts newContact)
+        public string AddContact(Contacts newContact)
         {
-            _db.Contacts.Add(newContact);
-            _db.SaveChanges();
+            Contacts addedContact = _db.Contacts.Add(newContact);
+            string addedContactName = addedContact.FirstName + " " + addedContact.LastName;
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return "Контакт " + addedContactName + " не был добавлен. Причина " + e.Message;
+            }
+
+            return "Контакт " + addedContactName + " был успешно добавлен!";
         }
     }
 }

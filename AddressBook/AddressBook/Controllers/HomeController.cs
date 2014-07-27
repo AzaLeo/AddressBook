@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AddressBook.Models;
+using WebMatrix.WebData;
 
 namespace AddressBook.Controllers
 {
@@ -27,6 +28,7 @@ namespace AddressBook.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.TypeList = from c in _db.GetTypeList()
@@ -39,11 +41,11 @@ namespace AddressBook.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Contacts newContact, IEnumerable<SelectListItem> test)
+        public ActionResult Create(Contacts newContact)
         {
-            Contacts s = newContact;
-            IEnumerable<SelectListItem> asdf = test;
-            return View();
+            newContact.UserId = WebSecurity.GetUserId(User.Identity.Name);
+            TempData["ChangeDBInfo"] = _db.AddContact(newContact);
+            return RedirectToAction("Index");
         }
     }
 }

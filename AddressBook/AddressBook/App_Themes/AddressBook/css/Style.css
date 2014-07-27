@@ -547,3 +547,8 @@ input[type=submit] {
     color: #FAFAFA;
     padding: 3px 10px;
 }
+
+.ChangeDBInfo {
+    color: darkred;
+    text-align: center;
+}
