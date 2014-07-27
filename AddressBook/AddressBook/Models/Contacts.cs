@@ -11,15 +11,20 @@ namespace AddressBook.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Contacts
     {
         public int ContactsId { get; set; }
+        [Required]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Phone { get; set; }
         public int AddressId { get; set; }
+        [Required]
         public string Email { get; set; }
         public int TypeId { get; set; }
         public int UserId { get; set; }

@@ -11,6 +11,7 @@ namespace AddressBook.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Addresses
     {
@@ -20,10 +21,15 @@ namespace AddressBook.Models
         }
     
         public int AddressId { get; set; }
+        [Required]
         public string Country { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string Street { get; set; }
+        [Required]
         public string House { get; set; }
+        [Required]
         public string Room { get; set; }
     
         public virtual ICollection<Contacts> Contacts { get; set; }

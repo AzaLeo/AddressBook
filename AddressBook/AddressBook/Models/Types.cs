@@ -11,6 +11,7 @@ namespace AddressBook.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Types
     {
@@ -20,6 +21,7 @@ namespace AddressBook.Models
         }
     
         public int TypeId { get; set; }
+        [Required]
         public string Name { get; set; }
     
         public virtual ICollection<Contacts> Contacts { get; set; }
