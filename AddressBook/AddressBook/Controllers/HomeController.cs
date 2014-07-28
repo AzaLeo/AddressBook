@@ -34,7 +34,7 @@ namespace AddressBook.Controllers
             ViewBag.TypeList = from c in _db.GetTypeList()
                                select new SelectListItem
                                {
-                                   Value = c.Name,
+                                   Value = c.TypeId.ToString(),
                                    Text = c.Name
                                };
             return View();
@@ -43,8 +43,13 @@ namespace AddressBook.Controllers
         [HttpPost]
         public ActionResult Create(Contacts newContact)
         {
-            newContact.UserId = WebSecurity.GetUserId(User.Identity.Name);
+            newContact.UserId = WebSecurity.CurrentUserId;
             TempData["ChangeDBInfo"] = _db.AddContact(newContact);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
             return RedirectToAction("Index");
         }
     }

@@ -31,7 +31,7 @@
                 @Html.ActionLink("Редактировать", "Edit", new { id = item.ContactsId })
             </td>
             <td>
-                @Html.ActionLink("Удалить", "Delete", new { id = item.ContactsId })
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ContactsId }, new { onclick = "return confirm('Вы точно хотите удалить этот контакт?')" })
             </td>
         </tr>
     }
