@@ -50,6 +50,7 @@ namespace AddressBook.Controllers
 
         public ActionResult Delete(int id)
         {
+            TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContact(id));
             return RedirectToAction("Index");
         }
     }

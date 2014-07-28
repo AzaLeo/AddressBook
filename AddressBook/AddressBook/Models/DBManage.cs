@@ -40,10 +40,28 @@ namespace AddressBook.Models
             }
             catch (Exception e)
             {
-                return "Контакт " + addedContactName + " не был добавлен. Причина " + e.Message;
+                return "Контакт " + addedContactName + " не был добавлен. Причина: " + e.Message;
             }
 
             return "Контакт " + addedContactName + " был успешно добавлен!";
+        }
+
+        public string DeleteContact(Contacts delContat)
+        {
+            _db.Addresses.Remove(delContat.Addresses);
+            Contacts removedContact = _db.Contacts.Remove(delContat);
+            string removedContactName = removedContact.FirstName + " " + removedContact.LastName;
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return "Контакт " + removedContactName + " не был удален. Причина: " + e.Message;
+            }
+
+            return "Контакт " + removedContactName + " был успешно удален!";
         }
     }
 }
