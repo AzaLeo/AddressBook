@@ -1,0 +1,116 @@
+﻿@model AddressBook.Models.Contacts
+
+@{
+    ViewBag.Title = "Редактировать";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Контакт</legend>
+
+        @Html.HiddenFor(model => model.ContactsId)
+        @Html.HiddenFor(model => model.UserId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MiddleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MiddleName)
+            @Html.ValidationMessageFor(model => model.MiddleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.Country)
+            @Html.ValidationMessageFor(model => model.Addresses.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.City)
+            @Html.ValidationMessageFor(model => model.Addresses.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.Street)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.Street)
+            @Html.ValidationMessageFor(model => model.Addresses.Street)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.House)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.House)
+            @Html.ValidationMessageFor(model => model.Addresses.House)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addresses.Room)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addresses.Room)
+            @Html.ValidationMessageFor(model => model.Addresses.Room)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.TypeId, (IEnumerable<SelectListItem>)ViewBag.TypeList)
+            @Html.ValidationMessageFor(model => model.TypeId)
+        </div>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

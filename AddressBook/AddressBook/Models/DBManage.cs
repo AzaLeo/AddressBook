@@ -46,6 +46,30 @@ namespace AddressBook.Models
             return "Контакт " + addedContactName + " был успешно добавлен!";
         }
 
+        public string EditContact(Contacts editContact)
+        {
+            Contacts oldContact = GetContact(editContact.ContactsId);
+            string removedContactName = editContact.FirstName + " " + editContact.LastName;
+            oldContact.FirstName = editContact.FirstName;
+            oldContact.MiddleName = editContact.MiddleName;
+            oldContact.LastName = editContact.LastName;
+            oldContact.Phone = editContact.Phone;
+            oldContact.Email = editContact.Email;
+            oldContact.Addresses = editContact.Addresses;
+            oldContact.TypeId = editContact.TypeId;
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return "Контакт " + removedContactName + " не был изменен. Причина: " + e.Message;
+            }
+
+            return "Контакт " + removedContactName + " был успешно изменен!";
+        }
+
         public string DeleteContact(Contacts delContat)
         {
             _db.Addresses.Remove(delContat.Addresses);

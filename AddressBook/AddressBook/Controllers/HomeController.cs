@@ -31,12 +31,7 @@ namespace AddressBook.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.TypeList = from c in _db.GetTypeList()
-                               select new SelectListItem
-                               {
-                                   Value = c.TypeId.ToString(),
-                                   Text = c.Name
-                               };
+            ViewBag.TypeList = GetDropDownList();
             return View();
         }
 
@@ -48,10 +43,34 @@ namespace AddressBook.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            ViewBag.TypeList = GetDropDownList();
+            return View(_db.GetContact(id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Contacts editContact)
+        {
+            TempData["ChangeDBInfo"] = _db.EditContact(editContact);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Delete(int id)
         {
             TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContact(id));
             return RedirectToAction("Index");
+        }
+
+        private IEnumerable<SelectListItem> GetDropDownList()
+        {
+            return from c in _db.GetTypeList()
+                   select new SelectListItem
+                     {
+                         Value = c.TypeId.ToString(),
+                         Text = c.Name
+                     };
         }
     }
 }
