@@ -10,12 +10,13 @@
 <h2>Список контактов</h2>
 
 <p>
-    @Html.ActionLink("Создать", "Create")
+    @Html.ActionLink("Создать", "Create", null, new { @class = "linkButton" })
 </p>
 <table>
     <tr>
-        <th>ФИО
-        </th>
+        <th>Фамилия, Имя</th>
+        <th colspan="2">Контактные данные</th>
+        <th colspan="2">Управление</th>
     </tr>
 
     @foreach (var item in Model)
@@ -26,6 +27,12 @@
         <tr>
             <td>
                 @Html.ActionLink(fullName, "Details", new { id = item.ContactsId }, new { @class = "Details", @title = "Детали контакта " + fullName })
+            </td>
+            <td>
+                @Html.DisplayFor(p => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(p => item.Email)
             </td>
             <td>
                 @Html.ActionLink("Редактировать", "Edit", new { id = item.ContactsId })

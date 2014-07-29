@@ -373,13 +373,13 @@ table tr th, table tr td {
     background: #3B3B3B;
     color: #FFF;
     padding: 10px;
-    text-align: left;
 }
 
 table tr td {
     background: #E5E5DB;
     color: #47433F;
     border: 1px solid #DBDBCF;
+    text-align: left;
 }
 
 /* scroll to top */
@@ -538,7 +538,7 @@ a.Details {
     padding: 10px;
 }
 
-input[type=submit] {
+input[type=submit], a.linkButton {
     border: 0;
     margin: 10px 0;
     cursor: pointer;
@@ -546,6 +546,8 @@ input[type=submit] {
     border-radius: 4px;
     color: #FAFAFA;
     padding: 3px 10px;
+    font-size: 13px;
+    text-decoration: none;
 }
 
 .ChangeDBInfo {
