@@ -223,6 +223,7 @@
       <DependentUpon>AddressBook.mdf</DependentUpon>
     </Content>
     <Content Include="App_Themes\AddressBook\css\colorbox.css" />
+    <Content Include="App_Themes\AddressBook\images\ajax-loader.gif" />
     <Content Include="App_Themes\AddressBook\images\another_page.png" />
     <Content Include="App_Themes\AddressBook\images\arrows-white.png" />
     <Content Include="App_Themes\AddressBook\images\browser.png" />
@@ -243,7 +244,6 @@
     <Content Include="App_Themes\AddressBook\images\top.png" />
     <Content Include="App_Themes\AddressBook\js\jquery.colorbox.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.easing-sooper.js" />
-    <Content Include="App_Themes\AddressBook\js\jquery.js" />
     <Content Include="App_Themes\AddressBook\js\jquery.sooperfish.js" />
     <Content Include="App_Themes\AddressBook\css\Style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -379,6 +379,7 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\ContactList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

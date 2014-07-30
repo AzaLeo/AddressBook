@@ -554,3 +554,7 @@ input[type=submit], a.linkButton {
     color: darkred;
     text-align: center;
 }
+
+.sortingLinks {
+    margin-bottom: 5px;
+}

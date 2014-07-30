@@ -22,6 +22,27 @@ namespace AddressBook.Controllers
             return View(_db.GetAllContacts());
         }
 
+        public ActionResult ContactList(string sort)
+        {
+            var orderedList = _db.GetAllContacts();
+            switch (sort)
+            {
+                case "firstname":
+                    orderedList = orderedList.OrderBy(f => f.FirstName);
+                    break;
+                case "lastname":
+                    orderedList = orderedList.OrderBy(l => l.LastName);
+                    break;
+                case "phone":
+                    orderedList = orderedList.OrderBy(p => p.Phone);
+                    break;
+                case "email":
+                    orderedList = orderedList.OrderBy(e => e.Email);
+                    break;
+            }
+            return PartialView(orderedList);
+        }
+
         public ActionResult Details(int id)
         {
             return View(_db.GetContact(id));
