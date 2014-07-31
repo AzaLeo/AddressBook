@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<AddressBook.Models.Contacts>
 
-<table>
+<table class="contactlist">
     <tr>
         <th>Фамилия, Имя</th>
         <th colspan="2">Контактные данные</th>
@@ -32,3 +32,10 @@
     }
 
 </table>
+
+@Scripts.Render("~/App_Themes/AddressBook/colorbox")
+<script>
+    $(document).ready(function () {
+        $("a.Details").colorbox();
+    });
+</script>

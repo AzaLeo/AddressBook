@@ -369,18 +369,6 @@ footer {
     margin: 0 0 20px 0;
 }
 
-table tr th, table tr td {
-    background: #3B3B3B;
-    color: #FFF;
-    padding: 10px;
-}
-
-table tr td {
-    background: #E5E5DB;
-    color: #47433F;
-    border: 1px solid #DBDBCF;
-    text-align: left;
-}
 
 /* scroll to top */
 #scroll {
@@ -557,4 +545,19 @@ input[type=submit], a.linkButton {
 
 .sortingLinks {
     margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+table.contactlist tr th, table tr td {
+    background: #3B3B3B;
+    color: #FFF;
+    padding: 10px;
+}
+
+table.contactlist tr td {
+    background: #E5E5DB;
+    color: #47433F;
+    border: 1px solid #DBDBCF;
+    text-align: left;
 }

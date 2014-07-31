@@ -45,7 +45,7 @@ namespace AddressBook.Controllers
 
         public ActionResult Details(int id)
         {
-            return View(_db.GetContact(id));
+            return PartialView(_db.GetContact(id));
         }
 
         [HttpGet]

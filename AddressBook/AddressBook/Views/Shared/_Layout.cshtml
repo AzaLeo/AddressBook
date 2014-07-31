@@ -7,13 +7,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/App_Themes/AddressBook/js")
     @Scripts.Render("~/bundles/modernizr")
-    <script>
-        $(document).ready(function () {
-            $("a.Details").colorbox();
-        });
-    </script>
     @Styles.Render("~/App_Themes/AddressBook/css")
 </head>
 <body>
@@ -53,13 +47,6 @@
             <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
         </footer>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('ul.sf-menu').sooperfish();
-        });
-    </script>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

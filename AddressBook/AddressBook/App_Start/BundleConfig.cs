@@ -43,10 +43,11 @@ namespace AddressBook
                         "~/App_Themes/AddressBook/css/Style.css",
                         "~/App_Themes/AddressBook/css/colorbox.css"));
 
-            bundles.Add(new ScriptBundle("~/App_Themes/AddressBook/js").Include(
-                        "~/App_Themes/AddressBook/js/jquery.easing-sooper.js",
-                        "~/App_Themes/AddressBook/js/jquery.sooperfish.js",
+            bundles.Add(new ScriptBundle("~/App_Themes/AddressBook/colorbox").Include(
                         "~/App_Themes/AddressBook/js/jquery.colorbox.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
+                        "~/Scripts/jquery.unobtrusive*"));
         }
     }
 }

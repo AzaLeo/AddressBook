@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Главная страница";
+    AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
 
 
@@ -13,18 +14,18 @@
     @Html.ActionLink("Создать", "Create", null, new { @class = "linkButton" })
 </p>
 <div class="sortingLinks">
-    Сортировка:
-    @Ajax.ActionLink("по имени", "ContactList", new { sort = "firstname" }, new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 100 }) |
-    @Ajax.ActionLink("по фамилии", "ContactList", new { sort = "lastname" }, new AjaxOptions { UpdateTargetId = "ContactList" }) |
-    @Ajax.ActionLink("по № телефона", "ContactList", new { sort = "phone" }, new AjaxOptions { UpdateTargetId = "ContactList" }) |
-    @Ajax.ActionLink("по email", "ContactList", new { sort = "email" }, new AjaxOptions { UpdateTargetId = "ContactList" })
-    <img id="loading" src="@Url.Content("~/App_Themes/AddressBook/images/ajax-loader.gif")" style="display:none" />
+    Сортировать:
+    @Ajax.ActionLink("по имени", "ContactList", new { sort = "firstname" }, ajaxOption) |
+    @Ajax.ActionLink("по фамилии", "ContactList", new { sort = "lastname" }, ajaxOption) |
+    @Ajax.ActionLink("по № телефона", "ContactList", new { sort = "phone" }, ajaxOption) |
+    @Ajax.ActionLink("по email", "ContactList", new { sort = "email" }, ajaxOption)
 </div>
+
+<img id="loading" src="@Url.Content("~/App_Themes/AddressBook/images/ajax-loader.gif")" style="display: none" />
 
 <div id="ContactList">
     @Html.Partial("ContactList", Model)
 </div>
-
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ajax")
 }
