@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Search";
+    AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
+}
+
+<h2>Поиск</h2>
+
+<div class="lettersLinks">
+    @foreach (char c in ViewBag.Alphabet)
+    {
+        <span>@Ajax.ActionLink(c.ToString(), "SearchResult", new { letter = (int)c }, ajaxOption) </span>
+    }
+</div>
+
+<div id="ContactList">
+    @Html.Partial("ContactList")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/ajax")
+}

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AddressBook.Models.Contacts>
+
+
+@if (Model != null)
+{
+    @Html.Partial("AjaxSort")
+    
+    <table class="contactlist">
+        <tr>
+            <th>Фамилия, Имя</th>
+            <th colspan="2">Контактные данные</th>
+            <th colspan="2">Управление</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string fullName = String.Empty;
+            fullName = item.LastName + " " + item.FirstName;
+        
+            <tr>
+                <td>
+                    @Html.ActionLink(fullName, "Details", new { id = item.ContactsId }, new { @class = "Details", @title = "Детали контакта " + fullName })
+                </td>
+                <td>
+                    @Html.DisplayFor(p => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(e => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.ContactsId })
+                </td>
+                <td>
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.ContactsId }, new { onclick = "return confirm('Вы точно хотите удалить этот контакт?')" })
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <div class="nodata">Нет данных</div>
+}
+
+@Scripts.Render("~/App_Themes/AddressBook/colorbox")
+<script>
+    $(document).ready(function () {
+        $("a.Details").colorbox();
+    });
+</script>

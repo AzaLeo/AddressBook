@@ -2,9 +2,7 @@
 
 @{
     ViewBag.Title = "Главная страница";
-    AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
-
 
 <div class="ChangeDBInfo">@TempData["ChangeDBInfo"]</div>
 
@@ -13,19 +11,11 @@
 <p>
     @Html.ActionLink("Создать", "Create", null, new { @class = "linkButton" })
 </p>
-<div class="sortingLinks">
-    Сортировать:
-    @Ajax.ActionLink("по имени", "ContactList", new { sort = "firstname" }, ajaxOption) |
-    @Ajax.ActionLink("по фамилии", "ContactList", new { sort = "lastname" }, ajaxOption) |
-    @Ajax.ActionLink("по № телефона", "ContactList", new { sort = "phone" }, ajaxOption) |
-    @Ajax.ActionLink("по email", "ContactList", new { sort = "email" }, ajaxOption)
-</div>
-
-<img id="loading" src="@Url.Content("~/App_Themes/AddressBook/images/ajax-loader.gif")" style="display: none" />
 
 <div id="ContactList">
     @Html.Partial("ContactList", Model)
 </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/ajax")
 }

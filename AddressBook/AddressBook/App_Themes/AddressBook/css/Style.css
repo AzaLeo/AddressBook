@@ -544,8 +544,7 @@ input[type=submit], a.linkButton {
 }
 
 .sortingLinks {
-    margin-bottom: 5px;
-    margin-right: 5px;
+    margin: 5px 0;
     float: left;
 }
 
@@ -560,4 +559,13 @@ table.contactlist tr td {
     color: #47433F;
     border: 1px solid #DBDBCF;
     text-align: left;
+}
+
+div.nodata {
+    text-align: center;
+    margin: 10px 0;
+    padding: 20px;
+    background: #E5E5DB;
+    border: 1px solid #DBDBCF;
+    color: #A8AA94;
 }

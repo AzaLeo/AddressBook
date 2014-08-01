@@ -22,7 +22,7 @@ namespace AddressBook.Controllers
             return View(_db.GetAllContacts());
         }
 
-        public ActionResult ContactList(string sort)
+        public ActionResult SortingList(string sort)
         {
             var orderedList = _db.GetAllContacts();
             switch (sort)
@@ -40,7 +40,7 @@ namespace AddressBook.Controllers
                     orderedList = orderedList.OrderBy(e => e.Email);
                     break;
             }
-            return PartialView(orderedList);
+            return PartialView("ContactList", orderedList);
         }
 
         public ActionResult Details(int id)
