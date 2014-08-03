@@ -1,16 +1,19 @@
 ﻿@{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Поиск по первому символу";
     AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
 
-<h2>Поиск</h2>
+<h2>@ViewBag.Title</h2>
 
-<div class="lettersLinks">
-    @foreach (char c in ViewBag.Alphabet)
-    {
-        <span>@Ajax.ActionLink(c.ToString(), "SearchResult", new { letter = (int)c }, ajaxOption) </span>
-    }
-</div>
+@using (Ajax.BeginForm("SearchResult", "Search", ajaxOption))
+{
+    @Html.DropDownList("selectSymbols", (IEnumerable<SelectListItem>)ViewBag.Symbols)
+    <label>@Html.RadioButton("searchOption", 1) имя</label>
+    <label>@Html.RadioButton("searchOption", 2) фамилия</label>
+    <label>@Html.RadioButton("searchOption", 3) номер телефона</label>
+    <label>@Html.RadioButton("searchOption", 4) email</label>
+    <input type="submit" value="Искать" />
+}
 
 <div id="ContactList">
     @Html.Partial("ContactList")

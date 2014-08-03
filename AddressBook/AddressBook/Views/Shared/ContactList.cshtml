@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<AddressBook.Models.Contacts>
 
-
 @if (Model != null)
 {
     @Html.Partial("AjaxSort")
@@ -19,7 +18,7 @@
         
             <tr>
                 <td>
-                    @Html.ActionLink(fullName, "Details", new { id = item.ContactsId }, new { @class = "Details", @title = "Детали контакта " + fullName })
+                    @Html.ActionLink(fullName, "Details", "Home", new { id = item.ContactsId }, new { @class = "Details", @title = "Детали контакта " + fullName })
                 </td>
                 <td>
                     @Html.DisplayFor(p => item.Phone)
@@ -28,10 +27,10 @@
                     @Html.DisplayFor(e => item.Email)
                 </td>
                 <td>
-                    @Html.ActionLink("Редактировать", "Edit", new { id = item.ContactsId })
+                    @Html.ActionLink("Редактировать", "Edit", "Home", new { id = item.ContactsId }, null)
                 </td>
                 <td>
-                    @Html.ActionLink("Удалить", "Delete", new { id = item.ContactsId }, new { onclick = "return confirm('Вы точно хотите удалить этот контакт?')" })
+                    @Html.ActionLink("Удалить", "Delete", "Home", new { id = item.ContactsId }, new { onclick = "return confirm('Вы точно хотите удалить этот контакт?')" })
                 </td>
             </tr>
         }

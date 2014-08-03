@@ -10,7 +10,7 @@ namespace AddressBook.Models
         private AddressBookEntities _db;
 
         public DBManage()
-        { 
+        {
             _db = new AddressBookEntities();
         }
 
@@ -86,6 +86,26 @@ namespace AddressBook.Models
             }
 
             return "Контакт " + removedContactName + " был успешно удален!";
+        }
+
+        public IEnumerable<Contacts> SearchByFirstLetterFirstName(string symbol)
+        {
+            return _db.Contacts.Where(s => s.FirstName.Substring(0, 1) == symbol);
+        }
+
+        public IEnumerable<Contacts> SearchByFirstLetterLastName(string symbol)
+        {
+            return _db.Contacts.Where(s => s.LastName.Substring(0, 1) == symbol);
+        }
+
+        public IEnumerable<Contacts> SearchByFirstLetterPhone(string symbol)
+        {
+            return _db.Contacts.Where(s => s.Phone.Substring(0, 1) == symbol);
+        }
+
+        public IEnumerable<Contacts> SearchByFirstLetterEmail(string symbol)
+        {
+            return _db.Contacts.Where(s => s.Email.Substring(0, 1) == symbol);
         }
     }
 }
