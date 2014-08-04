@@ -517,7 +517,7 @@ section#login {
     margin: 20px 10px 0 0;
 }
 
-a.Details {
+a.details {
     text-decoration: none;
     border-bottom: 1px dashed #06A6CE;
 }
@@ -528,7 +528,7 @@ a.Details {
 
 input[type=submit], a.linkButton {
     border: 0;
-    margin: 10px 0;
+    margin-top: 10px;
     cursor: pointer;
     background: #3B3B3B;
     border-radius: 4px;
@@ -538,30 +538,30 @@ input[type=submit], a.linkButton {
     text-decoration: none;
 }
 
-.ChangeDBInfo {
+.changeDBInfo {
     color: darkred;
     text-align: center;
 }
 
 .sortingLinks {
-    margin: 5px 0;
+    margin-bottom: 10px;
     float: left;
 }
 
-table.contactlist tr th, table tr td {
+table.contactList tr th, table.contactList tr td {
     background: #3B3B3B;
     color: #FFF;
     padding: 10px;
 }
 
-table.contactlist tr td {
+table.contactList tr td {
     background: #E5E5DB;
     color: #47433F;
     border: 1px solid #DBDBCF;
     text-align: left;
 }
 
-div.nodata {
+div.noData {
     text-align: center;
     margin: 10px 0;
     padding: 20px;
@@ -569,3 +569,11 @@ div.nodata {
     border: 1px solid #DBDBCF;
     color: #A8AA94;
 }
+
+div.searchSection {
+    margin-bottom: 10px;
+}
+
+    div.searchSection label, div.searchSection select {
+        margin-right: 8px;
+    }

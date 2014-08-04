@@ -34,7 +34,7 @@ namespace AddressBook.Controllers
             return View();
         }
 
-        public ActionResult SearchResult(string selectSymbols, List<int> searchOption)
+        public ActionResult Result(string selectSymbols, List<int> searchOption)
         {
             IEnumerable<Contacts> result = null;
 

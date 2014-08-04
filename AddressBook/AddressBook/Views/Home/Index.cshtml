@@ -4,7 +4,7 @@
     ViewBag.Title = "Главная страница";
 }
 
-<div class="ChangeDBInfo">@TempData["ChangeDBInfo"]</div>
+<div class="changeDBInfo">@TempData["ChangeDBInfo"]</div>
 
 <h2>Список контактов</h2>
 
@@ -12,7 +12,7 @@
     @Html.ActionLink("Создать", "Create", null, new { @class = "linkButton" })
 </p>
 
-<div id="ContactList">
+<div id="contactList">
     @Html.Partial("ContactList", Model)
 </div>
 

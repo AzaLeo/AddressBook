@@ -1,21 +1,23 @@
 ﻿@{
     ViewBag.Title = "Поиск по первому символу";
-    AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "ContactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
+    AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "contactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Ajax.BeginForm("SearchResult", "Search", ajaxOption))
-{
-    @Html.DropDownList("selectSymbols", (IEnumerable<SelectListItem>)ViewBag.Symbols)
-    <label>@Html.RadioButton("searchOption", 1) имя</label>
-    <label>@Html.RadioButton("searchOption", 2) фамилия</label>
-    <label>@Html.RadioButton("searchOption", 3) номер телефона</label>
-    <label>@Html.RadioButton("searchOption", 4) email</label>
-    <input type="submit" value="Искать" />
-}
+<div class="searchSection">
+    @using (Ajax.BeginForm("Result", "Search", ajaxOption))
+    {
+        @Html.DropDownList("selectSymbols", (IEnumerable<SelectListItem>)ViewBag.Symbols)
+        <label>@Html.RadioButton("searchOption", 1) имя</label>
+        <label>@Html.RadioButton("searchOption", 2) фамилия</label>
+        <label>@Html.RadioButton("searchOption", 3) номер телефона</label>
+        <label>@Html.RadioButton("searchOption", 4) email</label>
+        <input type="submit" value="Искать" />
+    }
+</div>
 
-<div id="ContactList">
+<div id="contactList">
     @Html.Partial("ContactList")
 </div>
 

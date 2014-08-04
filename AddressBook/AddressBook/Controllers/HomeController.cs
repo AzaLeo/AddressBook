@@ -24,23 +24,24 @@ namespace AddressBook.Controllers
 
         public ActionResult SortingList(string sort)
         {
-            var orderedList = _db.GetAllContacts();
+            IEnumerable<Contacts> modelForSort = (IEnumerable<Contacts>)Session["ModelForSort"];
+
             switch (sort)
             {
                 case "firstname":
-                    orderedList = orderedList.OrderBy(f => f.FirstName);
+                    modelForSort = modelForSort.OrderBy(f => f.FirstName);
                     break;
                 case "lastname":
-                    orderedList = orderedList.OrderBy(l => l.LastName);
+                    modelForSort = modelForSort.OrderBy(l => l.LastName);
                     break;
                 case "phone":
-                    orderedList = orderedList.OrderBy(p => p.Phone);
+                    modelForSort = modelForSort.OrderBy(p => p.Phone);
                     break;
                 case "email":
-                    orderedList = orderedList.OrderBy(e => e.Email);
+                    modelForSort = modelForSort.OrderBy(e => e.Email);
                     break;
             }
-            return PartialView("ContactList", orderedList);
+            return PartialView("ContactList", modelForSort);
         }
 
         public ActionResult Details(int id)
