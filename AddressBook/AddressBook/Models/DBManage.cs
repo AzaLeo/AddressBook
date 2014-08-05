@@ -46,17 +46,17 @@ namespace AddressBook.Models
             return "Контакт " + addedContactName + " был успешно добавлен!";
         }
 
-        public string EditContact(Contacts editContact)
+        public string EditContact(Contacts edit)
         {
-            Contacts oldContact = GetContact(editContact.ContactsId);
-            string removedContactName = editContact.FirstName + " " + editContact.LastName;
-            oldContact.FirstName = editContact.FirstName;
-            oldContact.MiddleName = editContact.MiddleName;
-            oldContact.LastName = editContact.LastName;
-            oldContact.Phone = editContact.Phone;
-            oldContact.Email = editContact.Email;
-            oldContact.Addresses = editContact.Addresses;
-            oldContact.TypeId = editContact.TypeId;
+            Contacts original = GetContact(edit.ContactsId);
+            string editContactName = edit.FirstName + " " + edit.LastName;
+            original.FirstName = edit.FirstName;
+            original.MiddleName = edit.MiddleName;
+            original.LastName = edit.LastName;
+            original.Phone = edit.Phone;
+            original.Email = edit.Email;
+            original.TypeId = edit.TypeId;
+            UpdateAddress(original.Addresses, edit.Addresses);
 
             try
             {
@@ -64,10 +64,19 @@ namespace AddressBook.Models
             }
             catch (Exception e)
             {
-                return "Контакт " + removedContactName + " не был изменен. Причина: " + e.Message;
+                return "Контакт " + editContactName + " не был изменен. Причина: " + e.Message;
             }
 
-            return "Контакт " + removedContactName + " был успешно изменен!";
+            return "Контакт " + editContactName + " был успешно изменен!";
+        }
+
+        private void UpdateAddress(Addresses original, Addresses edit)
+        {
+            original.Country = edit.Country;
+            original.City = edit.City;
+            original.Street = edit.Street;
+            original.House = edit.House;
+            original.Room = edit.Room;
         }
 
         public string DeleteContact(Contacts delContat)
