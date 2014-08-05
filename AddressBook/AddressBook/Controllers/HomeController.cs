@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AddressBook.Models;
 using WebMatrix.WebData;
+using System.Web.Security;
 
 namespace AddressBook.Controllers
 {
@@ -58,6 +59,7 @@ namespace AddressBook.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Contacts newContact)
         {
             newContact.UserId = WebSecurity.CurrentUserId;
@@ -66,21 +68,34 @@ namespace AddressBook.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Edit(int id)
         {
+            if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
+            {
+                TempData["ChangeDBInfo"] = "Вы можете редактировать только свои контакты";
+                return RedirectToAction("Index");
+            }
             ViewBag.TypeList = GetDropDownList();
             return View(_db.GetContact(id));
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Edit(Contacts editContact)
         {
             TempData["ChangeDBInfo"] = _db.EditContact(editContact);
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult Delete(int id)
         {
+            if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
+            {
+                TempData["ChangeDBInfo"] = "Вы можете удалять только свои контакты";
+                return RedirectToAction("Index");
+            }
             TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContact(id));
             return RedirectToAction("Index");
         }
