@@ -73,7 +73,7 @@ namespace AddressBook.Controllers
         {
             if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
             {
-                TempData["ChangeDBInfo"] = "Вы можете редактировать только свои контакты";
+                TempData["ChangeDBInfo"] = Resources.Controllers.СanEditOnlyTheirContact;
                 return RedirectToAction("Index");
             }
             ViewBag.TypeList = GetDropDownList();
@@ -93,7 +93,7 @@ namespace AddressBook.Controllers
         {
             if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
             {
-                TempData["ChangeDBInfo"] = "Вы можете удалять только свои контакты";
+                TempData["ChangeDBInfo"] = Resources.Controllers.CanDeleteOnlyTheirContact;
                 return RedirectToAction("Index");
             }
             TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContact(id));

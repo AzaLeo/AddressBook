@@ -8,20 +8,20 @@
 {
     Session["ModelForSort"] = Model;
     <div class="sortingLinks">
-        Сортировка:
-        @Ajax.ActionLink("по имени", "SortingList", "Home", new { sort = "firstname" }, ajaxOption) |
-        @Ajax.ActionLink("по фамилии", "SortingList", "Home", new { sort = "lastname" }, ajaxOption) |
-        @Ajax.ActionLink("по № телефона", "SortingList", "Home", new { sort = "phone" }, ajaxOption) |
-        @Ajax.ActionLink("по email", "SortingList", "Home", new { sort = "email" }, ajaxOption)
+        @Resources.Views.Sort:
+        @Ajax.ActionLink(Resources.Views.SortFirstName, "SortingList", "Home", new { sort = "firstname" }, ajaxOption) |
+        @Ajax.ActionLink(Resources.Views.SortLastName, "SortingList", "Home", new { sort = "lastname" }, ajaxOption) |
+        @Ajax.ActionLink(Resources.Views.SortPhone, "SortingList", "Home", new { sort = "phone" }, ajaxOption) |
+        @Ajax.ActionLink(Resources.Views.SortEmail, "SortingList", "Home", new { sort = "email" }, ajaxOption)
     </div>
 
     <img id="loading" src="@Url.Content("~/App_Themes/AddressBook/images/ajax-loader.gif")" style="display: none;" />
     
     <table class="contactList">
         <tr>
-            <th>Фамилия, Имя</th>
-            <th colspan="2">Контактные данные</th>
-            <th colspan="2">Управление</th>
+            <th>@Resources.Views.LastName, @Resources.Views.FirstName</th>
+            <th colspan="2">@Resources.Views.ContactData</th>
+            <th colspan="2">@Resources.Views.Manage</th>
         </tr>
 
         @foreach (var item in Model)
@@ -31,7 +31,7 @@
         
             <tr>
                 <td>
-                    @Html.ActionLink(fullName, "Details", "Home", new { id = item.ContactsId }, new { @class = "details", @title = "Детали контакта " + fullName })
+                    @Html.ActionLink(fullName, "Details", "Home", new { id = item.ContactsId }, new { @class = "details", @title = Resources.Views.ContactDetails + " " + fullName })
                 </td>
                 <td>
                     @Html.DisplayFor(p => item.Phone)
@@ -40,10 +40,10 @@
                     @Html.DisplayFor(e => item.Email)
                 </td>
                 <td>
-                    @Html.ActionLink("Редактировать", "Edit", "Home", new { id = item.ContactsId }, null)
+                    @Html.ActionLink(Resources.Views.Edit, "Edit", "Home", new { id = item.ContactsId }, null)
                 </td>
                 <td>
-                    @Html.ActionLink("Удалить", "Delete", "Home", new { id = item.ContactsId }, new { onclick = "return confirm('Вы точно хотите удалить этот контакт?')" })
+                    @Html.ActionLink(Resources.Views.Delete, "Delete", "Home", new { id = item.ContactsId }, new { onclick = Resources.Views.ConfirmDelete })
                 </td>
             </tr>
         }
@@ -51,7 +51,7 @@
 }
 else
 {
-    <div class="noData">Нет данных</div>
+    <div class="noData">@Resources.Views.NoInfo</div>
 }
 
 @Scripts.Render("~/App_Themes/AddressBook/colorbox")

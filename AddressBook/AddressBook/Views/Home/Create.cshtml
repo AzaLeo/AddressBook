@@ -1,7 +1,7 @@
 ﻿@model AddressBook.Models.Contacts
 
 @{
-    ViewBag.Title = "Создать контакт";
+    ViewBag.Title = @Resources.Views.CreateContact;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,7 +11,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Контакт</legend>
+        <legend>@Resources.Views.Contact</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.FirstName)
@@ -102,7 +102,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Создать" />
+            <input type="submit" value="@Resources.Views.Create" />
         </p>
     </fieldset>
 }

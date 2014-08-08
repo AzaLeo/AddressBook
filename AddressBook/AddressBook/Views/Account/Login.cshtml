@@ -1,7 +1,7 @@
 ﻿@model AddressBook.Models.LoginModel
 
 @{
-    ViewBag.Title = "Выполнить вход";
+    ViewBag.Title = @Resources.Views.ToSign;
 }
 
 <hgroup class="title">
@@ -9,14 +9,14 @@
 </hgroup>
 
 <section id="loginForm">
-    <h2>Используйте для входа локальную учетную запись</h2>
+    <h2>@Resources.Views.EnterLocalAccount</h2>
     @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
         <fieldset>
-            <legend>Форма входа</legend>
+            <legend>@Resources.Views.LoginForm</legend>
 
             @Html.LabelFor(m => m.UserName)<br />
             @Html.TextBoxFor(m => m.UserName)
@@ -29,10 +29,10 @@
             @Html.CheckBoxFor(m => m.RememberMe)
             @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             <br />
-            <input type="submit" value="Выполнить вход" />
+            <input type="submit" value="@Resources.Views.ToSign" />
         </fieldset>
         <p>
-            @Html.ActionLink("Зарегистрируйтесь", "Register"), если у вас нет учетной записи.
+            @Html.ActionLink(@Resources.Views.SignUp, "Register"), @Resources.Views.IfNotHaveAccount
         </p>
     }
 </section>

@@ -1,11 +1,11 @@
 ﻿@model AddressBook.Models.RegisterModel
 @{
-    ViewBag.Title = "Регистрация";
+    ViewBag.Title = @Resources.Views.Register;
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Создание новой учетной записи.</h2>
+    <h1>@ViewBag.Title</h1>
+    <h2>@Resources.Views.CreateNewAccount</h2>
 </hgroup>
 
 @using (Html.BeginForm()) {
@@ -13,7 +13,7 @@
     @Html.ValidationSummary()
 
     <fieldset>
-        <legend>Форма регистрации</legend>
+        <legend>@Resources.Views.RegistrationForm</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
@@ -28,7 +28,7 @@
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
         </ol>
-        <input type="submit" value="Регистрация" />
+        <input type="submit" value="@Resources.Views.Register" />
     </fieldset>
 }
 

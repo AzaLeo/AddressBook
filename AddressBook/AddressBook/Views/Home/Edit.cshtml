@@ -1,7 +1,7 @@
 ﻿@model AddressBook.Models.Contacts
 
 @{
-    ViewBag.Title = "Редактировать";
+    ViewBag.Title = @Resources.Views.Edit;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -12,7 +12,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Контакт</legend>
+        <legend>@Resources.Views.Contact</legend>
 
         @Html.HiddenFor(model => model.ContactsId)
 
@@ -105,7 +105,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Сохранить" />
+            <input type="submit" value="@Resources.Views.Save" />
         </p>
     </fieldset>
 }

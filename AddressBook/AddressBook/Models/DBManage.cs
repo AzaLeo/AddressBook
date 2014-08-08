@@ -31,8 +31,7 @@ namespace AddressBook.Models
 
         public string AddContact(Contacts newContact)
         {
-            Contacts addedContact = _db.Contacts.Add(newContact);
-            string addedContactName = addedContact.FirstName + " " + addedContact.LastName;
+            _db.Contacts.Add(newContact);
 
             try
             {
@@ -40,16 +39,15 @@ namespace AddressBook.Models
             }
             catch (Exception e)
             {
-                return "Контакт " + addedContactName + " не был добавлен. Причина: " + e.Message;
+                return Resources.Models.AddContactFailed + " " + e.Message;
             }
 
-            return "Контакт " + addedContactName + " был успешно добавлен!";
+            return Resources.Models.AddContactSuccess;
         }
 
         public string EditContact(Contacts edit)
         {
             Contacts original = GetContact(edit.ContactsId);
-            string editContactName = edit.FirstName + " " + edit.LastName;
             original.FirstName = edit.FirstName;
             original.MiddleName = edit.MiddleName;
             original.LastName = edit.LastName;
@@ -64,10 +62,10 @@ namespace AddressBook.Models
             }
             catch (Exception e)
             {
-                return "Контакт " + editContactName + " не был изменен. Причина: " + e.Message;
+                return Resources.Models.EditContactFailed + " " + e.Message;
             }
 
-            return "Контакт " + editContactName + " был успешно изменен!";
+            return Resources.Models.EditContactSuccess;
         }
 
         private void UpdateAddress(Addresses original, Addresses edit)
@@ -82,8 +80,7 @@ namespace AddressBook.Models
         public string DeleteContact(Contacts delContat)
         {
             _db.Addresses.Remove(delContat.Addresses);
-            Contacts removedContact = _db.Contacts.Remove(delContat);
-            string removedContactName = removedContact.FirstName + " " + removedContact.LastName;
+            _db.Contacts.Remove(delContat);
 
             try
             {
@@ -91,10 +88,10 @@ namespace AddressBook.Models
             }
             catch (Exception e)
             {
-                return "Контакт " + removedContactName + " не был удален. Причина: " + e.Message;
+                return Resources.Models.DeleteContactFailed + " " + e.Message;
             }
 
-            return "Контакт " + removedContactName + " был успешно удален!";
+            return Resources.Models.DeleteContactSuccess;
         }
 
         public IEnumerable<Contacts> SearchByFirstLetterFirstName(string symbol)

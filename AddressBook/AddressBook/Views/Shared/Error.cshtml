@@ -1,10 +1,10 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
-    ViewBag.Title = "Ошибка";
+    ViewBag.Title = Resources.Views.Error;
 }
 
 <hgroup class="title">
-    <h1 class="error">Ошибка.</h1>
-    <h2 class="error">При обработке запроса произошла ошибка.</h2>
+    <h1 class="error">@Resources.Views.Error</h1>
+    <h2 class="error">@Resources.Views.ErrorQueryProcessing</h2>
 </hgroup>

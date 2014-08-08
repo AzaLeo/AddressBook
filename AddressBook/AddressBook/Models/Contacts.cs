@@ -16,16 +16,28 @@ namespace AddressBook.Models
     public partial class Contacts
     {
         public int ContactsId { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "FirstNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "FirstName", ResourceType = typeof(Resources.Models))]
         public string FirstName { get; set; }
+
+        [Display(Name = "MiddleName", ResourceType = typeof(Resources.Models))]
         public string MiddleName { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "LastNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "LastName", ResourceType = typeof(Resources.Models))]
         public string LastName { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "PhoneRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "Phone", ResourceType = typeof(Resources.Models))]
         public string Phone { get; set; }
+
         public int AddressId { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "EmailRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "Email", ResourceType = typeof(Resources.Models))]
         public string Email { get; set; }
+
         public int TypeId { get; set; }
         public int UserId { get; set; }
     

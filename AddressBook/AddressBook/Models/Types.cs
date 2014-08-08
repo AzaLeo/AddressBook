@@ -21,7 +21,9 @@ namespace AddressBook.Models
         }
     
         public int TypeId { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "TypeNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "TypeName", ResourceType = typeof(Resources.Models))]
         public string Name { get; set; }
     
         public virtual ICollection<Contacts> Contacts { get; set; }

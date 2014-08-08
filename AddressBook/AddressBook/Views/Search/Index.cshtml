@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Поиск по первому символу";
+    ViewBag.Title = Resources.Views.SearchFirstChar;
     AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "contactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
 
@@ -9,11 +9,11 @@
     @using (Ajax.BeginForm("Result", "Search", ajaxOption))
     {
         @Html.DropDownList("selectSymbols", (IEnumerable<SelectListItem>)ViewBag.Symbols)
-        <label>@Html.RadioButton("searchOption", 1) имя</label>
-        <label>@Html.RadioButton("searchOption", 2) фамилия</label>
-        <label>@Html.RadioButton("searchOption", 3) номер телефона</label>
-        <label>@Html.RadioButton("searchOption", 4) email</label>
-        <input type="submit" value="Искать" />
+        <label>@Html.RadioButton("searchOption", 1) @Resources.Views.SearchFirstName</label>
+        <label>@Html.RadioButton("searchOption", 2) @Resources.Views.SearchLastName</label>
+        <label>@Html.RadioButton("searchOption", 3) @Resources.Views.SearchPhone</label>
+        <label>@Html.RadioButton("searchOption", 4) @Resources.Views.SearchEmail</label>
+        <input type="submit" value="@Resources.Views.Search" />
     }
 </div>
 

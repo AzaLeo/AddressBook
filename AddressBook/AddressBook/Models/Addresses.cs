@@ -21,15 +21,25 @@ namespace AddressBook.Models
         }
     
         public int AddressId { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "CountryRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "Country", ResourceType = typeof(Resources.Models))]
         public string Country { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "CityRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "City", ResourceType = typeof(Resources.Models))]
         public string City { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "StreetRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "Street", ResourceType = typeof(Resources.Models))]
         public string Street { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "HouseRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "House", ResourceType = typeof(Resources.Models))]
         public string House { get; set; }
-        [Required]
+
+        [Required(ErrorMessageResourceName = "RoomRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "Room", ResourceType = typeof(Resources.Models))]
         public string Room { get; set; }
     
         public virtual ICollection<Contacts> Contacts { get; set; }

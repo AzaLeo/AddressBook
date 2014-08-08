@@ -29,8 +29,8 @@ namespace AddressBook.Models
 
     public class RegisterExternalLoginModel
     {
-        [Required]
-        [Display(Name = "Имя пользователя")]
+        [Required(ErrorMessageResourceName = "UserNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "UserName", ResourceType = typeof(Resources.Models))]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
@@ -38,53 +38,53 @@ namespace AddressBook.Models
 
     public class LocalPasswordModel
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "OldPasswordRequired", ErrorMessageResourceType = typeof(Resources.Models))]
         [DataType(DataType.Password)]
-        [Display(Name = "Текущий пароль")]
+        [Display(Name = "OldPassword", ResourceType = typeof(Resources.Models))]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "Значение \"{0}\" должно содержать не менее {2} символов.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceName = "NewPasswordRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [StringLength(100, ErrorMessageResourceName = "MinMaxLength", ErrorMessageResourceType = typeof(Resources.Models), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Новый пароль")]
+        [Display(Name = "NewPassword", ResourceType = typeof(Resources.Models))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение пароля")]
-        [Compare("NewPassword", ErrorMessage = "Новый пароль и его подтверждение не совпадают.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources.Models))]
+        [Compare("NewPassword", ErrorMessageResourceName = "NewPasswordNotMatch", ErrorMessageResourceType = typeof(Resources.Models))]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginModel
     {
-        [Required]
-        [Display(Name = "Имя пользователя")]
+        [Required(ErrorMessageResourceName = "UserNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "UserName", ResourceType = typeof(Resources.Models))]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "PasswordRequired", ErrorMessageResourceType = typeof(Resources.Models))]
         [DataType(DataType.Password)]
-        [Display(Name = "Пароль")]
+        [Display(Name = "Password", ResourceType = typeof(Resources.Models))]
         public string Password { get; set; }
 
-        [Display(Name = "Запомнить меня")]
+        [Display(Name = "RememberMe", ResourceType = typeof(Resources.Models))]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterModel
     {
-        [Required]
-        [Display(Name = "Имя пользователя")]
+        [Required(ErrorMessageResourceName = "UserNameRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [Display(Name = "UserName", ResourceType = typeof(Resources.Models))]
         public string UserName { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "Значение \"{0}\" должно содержать не менее {2} символов.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceName = "PasswordRequired", ErrorMessageResourceType = typeof(Resources.Models))]
+        [StringLength(100, ErrorMessageResourceName = "MinMaxLength", ErrorMessageResourceType = typeof(Resources.Models), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Пароль")]
+        [Display(Name = "Password", ResourceType = typeof(Resources.Models))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение пароля")]
-        [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources.Models))]
+        [Compare("NewPassword", ErrorMessageResourceName = "PasswordNotMatch", ErrorMessageResourceType = typeof(Resources.Models))]
         public string ConfirmPassword { get; set; }
     }
 

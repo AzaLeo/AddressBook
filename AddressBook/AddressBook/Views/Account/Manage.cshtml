@@ -1,6 +1,6 @@
 ﻿@model AddressBook.Models.LocalPasswordModel
 @{
-    ViewBag.Title = "Управление учетной записью";
+    ViewBag.Title = @Resources.Views.ManageAccount;
 }
 
 <hgroup class="title">
@@ -9,7 +9,7 @@
 
 <p class="message-success">@ViewBag.StatusMessage</p>
 
-<p>Вы вошли как <strong>@User.Identity.Name</strong>.</p>
+<p>@Resources.Views.LoggedAs <strong>@User.Identity.Name</strong>.</p>
 
 @if (ViewBag.HasLocalPassword)
 {
@@ -23,7 +23,7 @@ else
 <section id="externalLogins">
     @Html.Action("RemoveExternalLogins")
 
-    <h3>Добавить внешнюю учетную запись</h3>
+    <h3>@Resources.Views.AddExternalAccount</h3>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 

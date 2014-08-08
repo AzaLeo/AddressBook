@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>AddressBook (Тестовое задание) &bull; @ViewBag.Title</title>
+    <title>@Resources.Views.AddressBook (@Resources.Views.TestTask) &bull; @ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Scripts.Render("~/bundles/jquery")
@@ -21,16 +21,16 @@
                         </section>
                     </div>
                     <!-- class="logo_colour", allows you to change the colour of the text -->
-                    <h1><a href="~/"><span class="logo_colour">AddressBook</span></a></h1>
-                    <h2>Тестовое задание</h2>
+                    <h1><a href="~/"><span class="logo_colour">@Resources.Views.AddressBook</span></a></h1>
+                    <h2>@Resources.Views.TestTask</h2>
                 </div>
             </div>
             <nav>
                 <div id="menu_container">
                     <ul class="sf-menu" id="nav">
-                        <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Поиск", "Index", "Search")</li>
-                        <li>@Html.ActionLink("Мои контакты", "MyContacts", "Home")</li>
+                        <li>@Html.ActionLink(@Resources.Views.MainPage, "Index", "Home")</li>
+                        <li>@Html.ActionLink(@Resources.Views.Search, "Index", "Search")</li>
+                        <li>@Html.ActionLink(@Resources.Views.MyContacts, "MyContacts", "Home")</li>
                     </ul>
                 </div>
             </nav>
@@ -44,8 +44,8 @@
             </div>
         </div>
         <footer>
-            <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
-            <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+            <p>@Html.ActionLink(@Resources.Views.MainPage, "Index", "Home") | @Html.ActionLink(@Resources.Views.Search, "Index", "Search") | @Html.ActionLink(@Resources.Views.MyContacts, "MyContacts", "Home")</p>
+            <p>&copy; @Resources.Views.Copyright | <a href="http://www.css3templates.co.uk">@Resources.Views.CopyrightDesing</a></p>
         </footer>
     </div>
     @RenderSection("scripts", required: false)

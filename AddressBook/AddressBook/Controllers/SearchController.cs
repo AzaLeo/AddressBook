@@ -62,7 +62,6 @@ namespace AddressBook.Controllers
             catch (InvalidOperationException)
             {
                 result = null;
-                return PartialView("ContactList", result);
             }
 
             return PartialView("ContactList", result);

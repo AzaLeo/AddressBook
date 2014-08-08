@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<AddressBook.Models.Contacts>
 
 @{
-    ViewBag.Title = "Главная страница";
+    ViewBag.Title = @Resources.Views.MainPage;
 }
 
 <div class="changeDBInfo">@TempData["ChangeDBInfo"]</div>
 
-<h2>Список контактов</h2>
+<h2>@Resources.Views.ContactsList</h2>
 
 <p>
-    @Html.ActionLink("Создать", "Create", null, new { @class = "linkButton" })
+    @Html.ActionLink(@Resources.Views.Create, "Create", null, new { @class = "linkButton" })
 </p>
 
 <div id="contactList">

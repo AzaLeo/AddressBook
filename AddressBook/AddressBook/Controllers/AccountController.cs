@@ -41,7 +41,7 @@ namespace AddressBook.Controllers
             }
 
             // Появление этого сообщения означает наличие ошибки; повторное отображение формы
-            ModelState.AddModelError("", "Имя пользователя или пароль указаны неверно.");
+            ModelState.AddModelError("", Resources.Controllers.UsernameOrPasswordIncorrect);
             return View(model);
         }
 
@@ -128,9 +128,9 @@ namespace AddressBook.Controllers
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Пароль изменен."
-                : message == ManageMessageId.SetPasswordSuccess ? "Пароль задан."
-                : message == ManageMessageId.RemoveLoginSuccess ? "Внешняя учетная запись удалена."
+                message == ManageMessageId.ChangePasswordSuccess ? Resources.Controllers.PasswordIsChanged
+                : message == ManageMessageId.SetPasswordSuccess ? Resources.Controllers.PasswordIsSet
+                : message == ManageMessageId.RemoveLoginSuccess ? Resources.Controllers.ExternalAccountDeleted
                 : "";
             ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             ViewBag.ReturnUrl = Url.Action("Manage");
@@ -168,7 +168,7 @@ namespace AddressBook.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Неправильный текущий пароль или недопустимый новый пароль.");
+                        ModelState.AddModelError("", Resources.Controllers.CurrentOrNewPasswordInvalid);
                     }
                 }
             }
@@ -191,7 +191,7 @@ namespace AddressBook.Controllers
                     }
                     catch (Exception)
                     {
-                        ModelState.AddModelError("", String.Format("Не удалось создать локальную учетную запись. Возможно, учетная запись \"{0}\" уже существует.", User.Identity.Name));
+                        ModelState.AddModelError("", String.Format(Resources.Controllers.UsenamePerhapsAlreadyExists, User.Identity.Name));
                     }
                 }
             }
@@ -280,7 +280,7 @@ namespace AddressBook.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("UserName", "Имя пользователя уже существует. Введите другое имя пользователя.");
+                        ModelState.AddModelError("UserName", Resources.Controllers.UsenameAlreadyExists);
                     }
                 }
             }
@@ -372,34 +372,34 @@ namespace AddressBook.Controllers
             switch (createStatus)
             {
                 case MembershipCreateStatus.DuplicateUserName:
-                    return "Имя пользователя уже существует. Введите другое имя пользователя.";
+                    return Resources.Controllers.DuplicateUserName;
 
                 case MembershipCreateStatus.DuplicateEmail:
-                    return "Имя пользователя для данного адреса электронной почты уже существует. Введите другой адрес электронной почты.";
+                    return Resources.Controllers.DuplicateEmail;
 
                 case MembershipCreateStatus.InvalidPassword:
-                    return "Указан недопустимый пароль. Введите допустимое значение пароля.";
+                    return Resources.Controllers.InvalidPassword;
 
                 case MembershipCreateStatus.InvalidEmail:
-                    return "Указан недопустимый адрес электронной почты. Проверьте значение и повторите попытку.";
+                    return Resources.Controllers.InvalidEmail;
 
                 case MembershipCreateStatus.InvalidAnswer:
-                    return "Указан недопустимый ответ на вопрос для восстановления пароля. Проверьте значение и повторите попытку.";
+                    return Resources.Controllers.InvalidAnswer;
 
                 case MembershipCreateStatus.InvalidQuestion:
-                    return "Указан недопустимый вопрос для восстановления пароля. Проверьте значение и повторите попытку.";
+                    return Resources.Controllers.InvalidQuestion;
 
                 case MembershipCreateStatus.InvalidUserName:
-                    return "Указано недопустимое имя пользователя. Проверьте значение и повторите попытку.";
+                    return Resources.Controllers.InvalidUserName;
 
                 case MembershipCreateStatus.ProviderError:
-                    return "Поставщик проверки подлинности вернул ошибку. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
+                    return Resources.Controllers.ProviderError;
 
                 case MembershipCreateStatus.UserRejected:
-                    return "Запрос создания пользователя был отменен. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
+                    return Resources.Controllers.UserRejected;
 
                 default:
-                    return "Произошла неизвестная ошибка. Проверьте введенное значение и повторите попытку. Если проблему устранить не удастся, обратитесь к системному администратору.";
+                    return Resources.Controllers.ErrorCodeToStringDefault;
             }
         }
         #endregion
