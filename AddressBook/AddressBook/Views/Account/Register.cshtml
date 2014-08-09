@@ -14,20 +14,16 @@
 
     <fieldset>
         <legend>@Resources.Views.RegistrationForm</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
+
+                @Html.LabelFor(m => m.UserName)<br />
                 @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
+                <br />
+                @Html.LabelFor(m => m.Password)<br />
                 @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
+                <br />
+                @Html.LabelFor(m => m.ConfirmPassword)<br />
                 @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
+                <br />
         <input type="submit" value="@Resources.Views.Register" />
     </fieldset>
 }

@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddExternalAccount" xml:space="preserve">
-    <value>Добавить внешнюю учетную запись</value>
+    <value>Add external account</value>
   </data>
   <data name="AddressBook" xml:space="preserve">
     <value>AddressBook</value>
   </data>
   <data name="BindingAccount" xml:space="preserve">
-    <value>Свяжите свою учетную запись в</value>
+    <value>Binding your account in</value>
   </data>
   <data name="ChangingPassword" xml:space="preserve">
-    <value>Смена пароля</value>
+    <value>Changing the password</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>return confirm('Вы точно хотите удалить этот контакт?')</value>
+    <value>return confirm('Are you sure you want to delete this contact?')</value>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>Контакт</value>
+    <value>Contact</value>
   </data>
   <data name="ContactData" xml:space="preserve">
-    <value>Контактные данные</value>
+    <value>Contact data</value>
   </data>
   <data name="ContactDetails" xml:space="preserve">
-    <value>Детали контакта</value>
+    <value>Contact details</value>
   </data>
   <data name="ContactsList" xml:space="preserve">
-    <value>Список контактов</value>
+    <value>Contacts list</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>CSS3_two</value>
@@ -151,156 +151,156 @@
     <value>design from css3templates.co.uk</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Создать</value>
+    <value>Create</value>
   </data>
   <data name="CreateContact" xml:space="preserve">
-    <value>Создать контакт</value>
+    <value>Create a contact</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
-    <value>Создание новой учетной записи</value>
+    <value>Create new account</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Удалить</value>
+    <value>Delete</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Редактировать</value>
+    <value>Edit</value>
   </data>
   <data name="EnterLocalAccount" xml:space="preserve">
-    <value>Используйте для входа локальную учетную запись</value>
+    <value>Be sure to enter a local account</value>
   </data>
   <data name="EnterNameConfirm" xml:space="preserve">
-    <value>Введите имя пользователя на этом сайте ниже и нажмите кнопку "Подтвердить", чтобы завершить вход.</value>
+    <value>Enter your user name on this site below and click "Submit" to complete your entry.</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+    <value>Error</value>
   </data>
   <data name="ErrorLogging" xml:space="preserve">
-    <value>Ошибка при входе</value>
+    <value>Error logging</value>
   </data>
   <data name="ErrorQueryProcessing" xml:space="preserve">
-    <value>При обработке запроса произошла ошибка</value>
+    <value>During query processing, an error occurred</value>
   </data>
   <data name="ExternalAuthServiceNotConfig" xml:space="preserve">
-    <value>Внешние службы проверки подлинности не настроены. См. в &lt;a href="http://go.microsoft.com/fwlink/?LinkId=252166"&gt;этой статье&lt;/a&gt; сведения о настройке входа через сторонние службы в этом приложении ASP.NET.</value>
+    <value>External authentication service is not configured. See in &lt;a href="http://go.microsoft.com/fwlink/?LinkId=252166"&gt;this article&lt;/a&gt; information about configuring the input through third party services in this application ASP.NET.</value>
   </data>
   <data name="FirstName" xml:space="preserve">
-    <value>Фамилия</value>
+    <value>First Name</value>
   </data>
   <data name="FormBinding" xml:space="preserve">
-    <value>Форма связывания</value>
+    <value>Form binding</value>
   </data>
   <data name="FormChangingPassword" xml:space="preserve">
-    <value>Форма изменения пароля</value>
+    <value>Form changing password</value>
   </data>
   <data name="FormSetPassword" xml:space="preserve">
-    <value>Форма задания пароля</value>
+    <value>Form set password</value>
   </data>
   <data name="HaveTestedThrough" xml:space="preserve">
-    <value>Вы прошли проверку через</value>
+    <value>You have been tested through</value>
   </data>
   <data name="IfNotHaveAccount" xml:space="preserve">
-    <value>если у вас нет учетной записи.</value>
+    <value>if you have not account.</value>
   </data>
   <data name="LastName" xml:space="preserve">
-    <value>Имя</value>
+    <value>Last Name</value>
   </data>
   <data name="LoggedAs" xml:space="preserve">
-    <value>Вы вошли как</value>
+    <value>You are logged in as</value>
   </data>
   <data name="LoginForm" xml:space="preserve">
-    <value>Форма входа</value>
+    <value>Login form</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Выйти</value>
+    <value>Logout</value>
   </data>
   <data name="MainPage" xml:space="preserve">
-    <value>Главная</value>
+    <value>Main</value>
   </data>
   <data name="Manage" xml:space="preserve">
-    <value>Управление</value>
+    <value>Manage</value>
   </data>
   <data name="ManageAccount" xml:space="preserve">
-    <value>Управление учетной записью</value>
+    <value>Manage account</value>
   </data>
   <data name="MyContacts" xml:space="preserve">
-    <value>Мои контакты</value>
+    <value>My contacts</value>
   </data>
   <data name="NoInfo" xml:space="preserve">
-    <value>Нет данных</value>
+    <value>No Information</value>
   </data>
   <data name="NoLocalPassword" xml:space="preserve">
-    <value>У вас нет локального пароля для этого сайта. Добавьте локальный пароль, чтобы входить без внешней учетной записи.</value>
+    <value>You do not have a local password for this site. Add the local password to be entered without the external account.</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Регистрация</value>
+    <value>Register</value>
   </data>
   <data name="RegisteredExternalAccounts" xml:space="preserve">
-    <value>Зарегистрированные внешние учетные записи</value>
+    <value>Registered external accounts</value>
   </data>
   <data name="RegistrationForm" xml:space="preserve">
-    <value>Форма регистрации</value>
+    <value>Registration form</value>
   </data>
   <data name="RemoveCredentials" xml:space="preserve">
-    <value>Удалите эти учетные данные</value>
+    <value>Remove these accounts</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Сохранить</value>
+    <value>Save</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Искать</value>
+    <value>Search</value>
   </data>
   <data name="SearchEmail" xml:space="preserve">
     <value>email</value>
   </data>
   <data name="SearchFirstChar" xml:space="preserve">
-    <value>Поиск по первому символу</value>
+    <value>Searching by first character</value>
   </data>
   <data name="SearchFirstName" xml:space="preserve">
-    <value>имя</value>
+    <value>name</value>
   </data>
   <data name="SearchLastName" xml:space="preserve">
-    <value>фамилия</value>
+    <value>last name</value>
   </data>
   <data name="SearchPhone" xml:space="preserve">
-    <value>номер телефона</value>
+    <value>phone number</value>
   </data>
   <data name="SetPassword" xml:space="preserve">
-    <value>Задать пароль</value>
+    <value>Set password</value>
   </data>
   <data name="SignAnotherService" xml:space="preserve">
-    <value>Вход через другую службу</value>
+    <value>Sign in with another service</value>
   </data>
   <data name="SignUp" xml:space="preserve">
-    <value>Зарегистрируйтесь</value>
+    <value>Sign up</value>
   </data>
   <data name="SignUsingAccount" xml:space="preserve">
-    <value>Войдите, используя свою учетную запись</value>
+    <value>Sign in using your account</value>
   </data>
   <data name="Sort" xml:space="preserve">
-    <value>Сортировка</value>
+    <value>Sort</value>
   </data>
   <data name="SortEmail" xml:space="preserve">
-    <value>по email</value>
+    <value>by email</value>
   </data>
   <data name="SortFirstName" xml:space="preserve">
-    <value>по имени</value>
+    <value>by name</value>
   </data>
   <data name="SortLastName" xml:space="preserve">
-    <value>по фамилии</value>
+    <value>by last name</value>
   </data>
   <data name="SortPhone" xml:space="preserve">
-    <value>по № телефона</value>
+    <value>by phone</value>
   </data>
   <data name="TestTask" xml:space="preserve">
-    <value>Тестовое задание</value>
+    <value>Test task</value>
   </data>
   <data name="ToSign" xml:space="preserve">
-    <value>Выполнить вход</value>
+    <value>To sign</value>
   </data>
   <data name="UnableEnterEervice" xml:space="preserve">
-    <value>Не удалось войти через службу.</value>
+    <value>Unable to enter through the service.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Здравствуйте</value>
+    <value>Welcome</value>
   </data>
 </root>

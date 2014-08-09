@@ -3,7 +3,7 @@
         @Resources.Views.Welcome, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = Resources.Views.ManageAccount })!
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+            <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Views.Logout</a>
         }
     </text>
 } else {
