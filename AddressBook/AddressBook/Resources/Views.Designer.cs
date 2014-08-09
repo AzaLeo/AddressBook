@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на English.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Используйте для входа локальную учетную запись.
         /// </summary>
         public static string EnterLocalAccount {
@@ -435,6 +444,15 @@ namespace Resources {
         public static string RemoveCredentials {
             get {
                 return ResourceManager.GetString("RemoveCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Русский.
+        /// </summary>
+        public static string Russian {
+            get {
+                return ResourceManager.GetString("Russian", resourceCulture);
             }
         }
         

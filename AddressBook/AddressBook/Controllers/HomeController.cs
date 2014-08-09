@@ -100,6 +100,12 @@ namespace AddressBook.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ChangeLanguage(string lang, string returnUrl)
+        {
+            Session["Culture"] = new System.Globalization.CultureInfo(lang);
+            return Redirect(returnUrl);
+        }
+
         private IEnumerable<SelectListItem> GetDropDownList()
         {
             return from c in _db.GetTypeList()

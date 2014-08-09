@@ -19,6 +19,12 @@
                         <section id="login">
                             @Html.Partial("_LoginPartial")
                         </section>
+                        <section id="lang">
+                            <ul>
+                                <li>@Html.ActionLink(Resources.Views.Russian, "ChangeLanguage", "Home", new { lang = "ru", returnUrl = this.Request.RawUrl }, null)</li>
+                                <li>@Html.ActionLink(Resources.Views.English, "ChangeLanguage", "Home", new { lang = "en", returnUrl = this.Request.RawUrl }, null)</li>
+                            </ul>
+                        </section>
                     </div>
                     <!-- class="logo_colour", allows you to change the colour of the text -->
                     <h1><a href="~/"><span class="logo_colour">@Resources.Views.AddressBook</span></a></h1>
