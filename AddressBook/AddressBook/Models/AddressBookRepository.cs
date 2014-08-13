@@ -5,11 +5,11 @@ using System.Web;
 
 namespace AddressBook.Models
 {
-    public class DBManage
+    public class AddressBookRepository : IRepository
     {
         private AddressBookEntities _db;
 
-        public DBManage()
+        public AddressBookRepository()
         {
             _db = new AddressBookEntities();
         }

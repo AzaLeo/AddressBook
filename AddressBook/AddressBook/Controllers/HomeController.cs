@@ -11,11 +11,16 @@ namespace AddressBook.Controllers
 {
     public class HomeController : Controller
     {
-        private DBManage _db;
+        private IRepository _db;
 
         public HomeController()
         {
-            _db = new DBManage();
+            _db = new AddressBookRepository();
+        }
+
+        public HomeController(IRepository repository)
+        {
+            _db = repository;
         }
 
         public ActionResult Index()

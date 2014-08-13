@@ -9,11 +9,11 @@ namespace AddressBook.Controllers
 {
     public class SearchController : Controller
     {
-        private DBManage _db;
+        private AddressBookRepository _db;
 
         public SearchController()
         {
-            _db = new DBManage();
+            _db = new AddressBookRepository();
         }
 
         public ActionResult Index()
