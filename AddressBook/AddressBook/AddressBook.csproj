@@ -178,7 +178,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Resources\Controllers.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,7 +228,7 @@
     <Compile Include="Models\Contacts.cs">
       <DependentUpon>AddressBookModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AddressBookRepository.cs" />
+    <Compile Include="Repository\AddressBookRepository.cs" />
     <Compile Include="Models\Types.cs">
       <DependentUpon>AddressBookModel.tt</DependentUpon>
     </Compile>
