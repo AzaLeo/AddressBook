@@ -538,7 +538,7 @@ input[type=submit], a.linkButton {
     text-decoration: none;
 }
 
-.changeDBInfo {
+.userBarInfo {
     color: darkred;
     text-align: center;
 }

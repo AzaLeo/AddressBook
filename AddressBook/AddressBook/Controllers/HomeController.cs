@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AddressBook.Models;
 using WebMatrix.WebData;
 using System.Web.Security;
+using AddressBook.Repositories;
 
 namespace AddressBook.Controllers
 {
@@ -52,7 +53,7 @@ namespace AddressBook.Controllers
 
         public ActionResult Details(int id)
         {
-            return PartialView(_db.GetContact(id));
+            return PartialView(_db.GetContactById(id));
         }
 
         [HttpGet]
@@ -76,13 +77,13 @@ namespace AddressBook.Controllers
         [Authorize]
         public ActionResult Edit(int id)
         {
-            if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
+            if (WebSecurity.CurrentUserId != _db.GetContactById(id).UserId && !User.IsInRole("Admin"))
             {
                 TempData["ChangeDBInfo"] = Resources.Controllers.СanEditOnlyTheirContact;
                 return RedirectToAction("Index");
             }
             ViewBag.TypeList = GetDropDownList();
-            return View(_db.GetContact(id));
+            return View(_db.GetContactById(id));
         }
 
         [HttpPost]
@@ -96,12 +97,12 @@ namespace AddressBook.Controllers
         [Authorize]
         public ActionResult Delete(int id)
         {
-            if (WebSecurity.CurrentUserId != _db.GetContact(id).UserId && !User.IsInRole("Admin"))
+            if (WebSecurity.CurrentUserId != _db.GetContactById(id).UserId && !User.IsInRole("Admin"))
             {
                 TempData["ChangeDBInfo"] = Resources.Controllers.CanDeleteOnlyTheirContact;
                 return RedirectToAction("Index");
             }
-            TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContact(id));
+            TempData["ChangeDBInfo"] = _db.DeleteContact(_db.GetContactById(id));
             return RedirectToAction("Index");
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AddressBook.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,7 @@ namespace AddressBook.Models
             return _db.Contacts;
         }
 
-        public Contacts GetContact(int id)
+        public Contacts GetContactById(int id)
         {
             return _db.Contacts.SingleOrDefault(i => i.ContactsId == id);
         }
@@ -47,7 +48,7 @@ namespace AddressBook.Models
 
         public string EditContact(Contacts edit)
         {
-            Contacts original = GetContact(edit.ContactsId);
+            Contacts original = GetContactById(edit.ContactsId);
             original.FirstName = edit.FirstName;
             original.MiddleName = edit.MiddleName;
             original.LastName = edit.LastName;

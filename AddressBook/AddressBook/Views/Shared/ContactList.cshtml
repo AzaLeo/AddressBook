@@ -4,6 +4,8 @@
     AjaxOptions ajaxOption = new AjaxOptions { UpdateTargetId = "contactList", LoadingElementId = "loading", LoadingElementDuration = 2000 };
 }
 
+<div class="userBarInfo">@TempData["SortResultInfo"]</div>
+
 @if (Model != null)
 {
     Session["ModelForSort"] = Model;
