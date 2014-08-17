@@ -1,0 +1,19 @@
+﻿@model IEnumerable<AddressBook.Models.Contacts>
+
+@{
+    ViewBag.Title = Resources.Views.MyContacts;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink(@Resources.Views.Create, "Create", null, new { @class = "linkButton" })
+</p>
+
+<div id="contactList">
+    @Html.Partial("ContactList", Model)
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/ajax")
+}

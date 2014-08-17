@@ -112,6 +112,20 @@ namespace AddressBook.Controllers
             return Redirect(returnUrl);
         }
 
+        [Authorize]
+        public ActionResult MyContacts()
+        {
+            var result = _db.GetAllContacts().Where(u => u.UserId == WebSecurity.CurrentUserId);
+
+            // Если result не дало результатов, необходимо передать null для правильного отображения.
+            if (result.Count() == 0)
+            {
+                result = null;
+            }
+
+            return View(result);
+        }
+
         private IEnumerable<SelectListItem> GetDropDownList()
         {
             return from c in _db.GetTypeList()

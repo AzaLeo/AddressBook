@@ -55,11 +55,7 @@ namespace AddressBook.Controllers
             }
 
             // Если result не дало результатов, необходимо передать null для правильного отображения.
-            try
-            {
-                result.First();
-            }
-            catch (InvalidOperationException)
+            if (result.Count() == 0)
             {
                 result = null;
             }

@@ -94,7 +94,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TypeId)
+            @Html.LabelFor(model => model.Types.Name)
         </div>
         <div class="editor-field">
             @Html.DropDownListFor(model => model.TypeId, (IEnumerable<SelectListItem>)ViewBag.TypeList)
