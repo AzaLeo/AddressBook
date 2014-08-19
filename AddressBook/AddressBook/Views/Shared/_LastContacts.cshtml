@@ -1,0 +1,10 @@
+﻿@model IEnumerable<AddressBook.Models.Contacts>
+
+<h3>@Resources.Views.LastContacts</h3>
+
+<ul>
+    @foreach (var contact in Model)
+    {
+        <li>@contact.LastName @contact.FirstName</li>
+    }
+</ul>

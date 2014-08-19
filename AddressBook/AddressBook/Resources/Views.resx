@@ -204,8 +204,14 @@
   <data name="IfNotHaveAccount" xml:space="preserve">
     <value>если у вас нет учетной записи.</value>
   </data>
+  <data name="LastContacts" xml:space="preserve">
+    <value>Последние контакты</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Имя</value>
+  </data>
+  <data name="LastUsers" xml:space="preserve">
+    <value>Последние пользователи</value>
   </data>
   <data name="LoggedAs" xml:space="preserve">
     <value>Вы вошли как</value>

@@ -322,11 +322,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Последние контакты.
+        /// </summary>
+        public static string LastContacts {
+            get {
+                return ResourceManager.GetString("LastContacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Имя.
         /// </summary>
         public static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Последние пользователи.
+        /// </summary>
+        public static string LastUsers {
+            get {
+                return ResourceManager.GetString("LastUsers", resourceCulture);
             }
         }
         

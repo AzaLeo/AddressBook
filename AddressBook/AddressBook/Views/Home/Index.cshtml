@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AddressBook.Models.Contacts>
+﻿@using AddressBook.Models
+@model IEnumerable<Contacts>
 
 @{
     ViewBag.Title = @Resources.Views.MainPage;
@@ -18,4 +19,12 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/ajax")
+}
+@section Sidebar {
+    <div class="sidebar">
+        @Html.Partial("_LastContacts", (IEnumerable<Contacts>)ViewBag.LastContacts)
+    </div>
+    <div class="sidebar">
+        @Html.Partial("_LastUsers", (IEnumerable<UserProfile>)ViewBag.LastUsers)
+    </div>
 }

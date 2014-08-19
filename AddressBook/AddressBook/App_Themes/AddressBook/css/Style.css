@@ -220,10 +220,9 @@ nav {
     }
 
     .sidebar h3 {
-        padding: 14px 15px 14px 15px;
+        padding: 15px 0;
         color: #74706E;
-        font: 190% 'Yanone Kaffeesatz';
-        margin-left: 10px;
+        font: 130% 'Yanone Kaffeesatz';
     }
 
     .sidebar h4 {

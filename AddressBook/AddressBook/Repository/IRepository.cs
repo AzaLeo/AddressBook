@@ -1,9 +1,5 @@
 ﻿using AddressBook.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBook.Repositories
 {
@@ -14,6 +10,7 @@ namespace AddressBook.Repositories
         string DeleteContact(Contacts delContat);
         Contacts GetContactById(int id);
         IEnumerable<Types> GetTypeList();
+        IEnumerable<UserProfile> GetAllUsers();
         IEnumerable<Contacts> GetAllContacts();
         IEnumerable<Contacts> SearchByFirstLetterFirstName(string symbol);
         IEnumerable<Contacts> SearchByFirstLetterLastName(string symbol);

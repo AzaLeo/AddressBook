@@ -1,8 +1,6 @@
 ﻿using AddressBook.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AddressBook.Controllers
@@ -54,7 +52,7 @@ namespace AddressBook.Controllers
                     break;
             }
 
-            // Если result не дало результатов, необходимо передать null для правильного отображения.
+            // Если result не дал результатов, необходимо передать null для правильного отображения.
             if (result.Count() == 0)
             {
                 result = null;

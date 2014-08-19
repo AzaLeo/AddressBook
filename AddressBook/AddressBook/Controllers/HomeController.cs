@@ -1,12 +1,9 @@
-﻿using System;
+﻿using AddressBook.Models;
+using AddressBook.Repositories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using AddressBook.Models;
 using WebMatrix.WebData;
-using System.Web.Security;
-using AddressBook.Repositories;
 
 namespace AddressBook.Controllers
 {
@@ -26,7 +23,10 @@ namespace AddressBook.Controllers
 
         public ActionResult Index()
         {
-            return View(_db.GetAllContacts());
+            var allContact = _db.GetAllContacts();
+            ViewBag.LastContacts = allContact.OrderByDescending(id => id.ContactsId).Take(5);
+            ViewBag.LastUsers = _db.GetAllUsers().OrderByDescending(id => id.UserId).Take(5);
+            return View(allContact);
         }
 
         public ActionResult SortingList(string sort)
@@ -117,7 +117,7 @@ namespace AddressBook.Controllers
         {
             var result = _db.GetAllContacts().Where(u => u.UserId == WebSecurity.CurrentUserId);
 
-            // Если result не дало результатов, необходимо передать null для правильного отображения.
+            // Если result не дал результатов, необходимо передать null для правильного отображения.
             if (result.Count() == 0)
             {
                 result = null;

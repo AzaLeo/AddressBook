@@ -204,8 +204,14 @@
   <data name="IfNotHaveAccount" xml:space="preserve">
     <value>if you have not account.</value>
   </data>
+  <data name="LastContacts" xml:space="preserve">
+    <value>Last contacts</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Last Name</value>
+  </data>
+  <data name="LastUsers" xml:space="preserve">
+    <value>Last users</value>
   </data>
   <data name="LoggedAs" xml:space="preserve">
     <value>You are logged in as</value>

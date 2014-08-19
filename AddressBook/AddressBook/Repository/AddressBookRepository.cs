@@ -2,41 +2,42 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace AddressBook.Models
 {
     public class AddressBookRepository : IRepository
     {
-        private AddressBookEntities _db;
+        private AddressBookEntities _abe;
+        private UsersContext _uc;
 
         public AddressBookRepository()
         {
-            _db = new AddressBookEntities();
+            _abe = new AddressBookEntities();
+            _uc = new UsersContext();
         }
 
         public IEnumerable<Contacts> GetAllContacts()
         {
-            return _db.Contacts;
+            return _abe.Contacts;
         }
 
         public Contacts GetContactById(int id)
         {
-            return _db.Contacts.SingleOrDefault(i => i.ContactsId == id);
+            return _abe.Contacts.SingleOrDefault(i => i.ContactsId == id);
         }
 
         public IEnumerable<Types> GetTypeList()
         {
-            return _db.Types;
+            return _abe.Types;
         }
 
         public string AddContact(Contacts newContact)
         {
-            _db.Contacts.Add(newContact);
+            _abe.Contacts.Add(newContact);
 
             try
             {
-                _db.SaveChanges();
+                _abe.SaveChanges();
             }
             catch (Exception e)
             {
@@ -59,7 +60,7 @@ namespace AddressBook.Models
 
             try
             {
-                _db.SaveChanges();
+                _abe.SaveChanges();
             }
             catch (Exception e)
             {
@@ -80,12 +81,12 @@ namespace AddressBook.Models
 
         public string DeleteContact(Contacts delContat)
         {
-            _db.Addresses.Remove(delContat.Addresses);
-            _db.Contacts.Remove(delContat);
+            _abe.Addresses.Remove(delContat.Addresses);
+            _abe.Contacts.Remove(delContat);
 
             try
             {
-                _db.SaveChanges();
+                _abe.SaveChanges();
             }
             catch (Exception e)
             {
@@ -95,24 +96,29 @@ namespace AddressBook.Models
             return Resources.Models.DeleteContactSuccess;
         }
 
+        public IEnumerable<UserProfile> GetAllUsers()
+        {
+            return _uc.UserProfiles;
+        }
+
         public IEnumerable<Contacts> SearchByFirstLetterFirstName(string symbol)
         {
-            return _db.Contacts.Where(s => s.FirstName.Substring(0, 1) == symbol);
+            return _abe.Contacts.Where(s => s.FirstName.Substring(0, 1) == symbol);
         }
 
         public IEnumerable<Contacts> SearchByFirstLetterLastName(string symbol)
         {
-            return _db.Contacts.Where(s => s.LastName.Substring(0, 1) == symbol);
+            return _abe.Contacts.Where(s => s.LastName.Substring(0, 1) == symbol);
         }
 
         public IEnumerable<Contacts> SearchByFirstLetterPhone(string symbol)
         {
-            return _db.Contacts.Where(s => s.Phone.Substring(0, 1) == symbol);
+            return _abe.Contacts.Where(s => s.Phone.Substring(0, 1) == symbol);
         }
 
         public IEnumerable<Contacts> SearchByFirstLetterEmail(string symbol)
         {
-            return _db.Contacts.Where(s => s.Email.Substring(0, 1) == symbol);
+            return _abe.Contacts.Where(s => s.Email.Substring(0, 1) == symbol);
         }
     }
 }
