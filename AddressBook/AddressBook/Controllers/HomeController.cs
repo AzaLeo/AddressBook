@@ -61,7 +61,7 @@ namespace AddressBook.Controllers
         public ActionResult Create()
         {
             ViewBag.TypeList = GetDropDownList();
-            return View();
+            return View("Create");
         }
 
         [HttpPost]
